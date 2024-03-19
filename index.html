@@ -7,6 +7,7 @@
     <title>The Band</title>
     <link rel="icon" type="image/x-icon" href="./icon wed/favicon.ico">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/slide.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.2.1-web/css/all.css">
 </head>
 <body>
@@ -50,7 +51,7 @@
                     
                 </div>
             </div>
-            <div id="header" class="header-zindex-1">
+            <div id="header" class="header-zindex-2">
                 <!-- begin nav -->
                <ul id="nav">
                 <!-- <li>
@@ -76,15 +77,139 @@
                 <!-- end nav -->
             </div>
         </div>
-        
-
-        <div id="slider">
-            <div class="text-concent">
-                <h2 class="text-heading">Los Angeles</h2>
-                <div class="text-description">We had the best time playing at Venice Beach!</div>
+        <div class="carousel">
+            <!-- list item -->
+            <div class="list">
+                <!-- item 1 -->
+                <div class="item" data-slide="1">
+                    <img src="./icon wed/img1.jpg">
+                    <div class="content">
+                        <div class="author">LUNDEV</div>
+                        <div class="title">DESIGN SLIDER</div>
+                        <div class="topic">ANIMAL</div>
+                        <div class="des">
+                            <!-- lorem 50 -->
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                        </div>
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item 2 -->
+                <div class="item" data-slide="2">
+                    <img src="./icon wed/img2.jpg">
+                    <div class="content">
+                        <div class="author">LUNDEV</div>
+                        <div class="title">DESIGN SLIDER</div>
+                        <div class="topic">ANIMAL</div>
+                        <div class="des">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                        </div>
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item 3 -->
+                <div class="item" data-slide="3">
+                    <img src="./icon wed/img3.jpg">
+                    <div class="content">
+                        <div class="author">LUNDEV</div>
+                        <div class="title">DESIGN SLIDER</div>
+                        <div class="topic">ANIMAL</div>
+                        <div class="des">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                        </div>
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item 4 -->
+                <div class="item" data-slide="4">
+                    <img src="./icon wed/img4.jpg">
+                    <div class="content">
+                        <div class="author">LUNDEV</div>
+                        <div class="title">DESIGN SLIDER</div>
+                        <div class="topic">ANIMAL</div>
+                        <div class="des">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                        </div>
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+        
+            <!-- thumbnail -->
+            <div class="thumbnail">
+                <!-- thumbnail item 1 -->
+                <div class="item" data-slide="1">
+                    <img src="./icon wed/img1.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Name Slider
+                        </div>
+                        <div class="description">
+                            Description
+                        </div>
+                    </div>
+                </div>
+                <!-- thumbnail item 2 -->
+                <div class="item" data-slide="2">
+                    <img src="./icon wed/img2.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Name Slider
+                        </div>
+                        <div class="description">
+                            Description
+                        </div>
+                    </div>
+                </div>
+                <!-- thumbnail item 3 -->
+                <div class="item" data-slide="3">
+                    <img src="./icon wed/img3.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Name Slider
+                        </div>
+                        <div class="description">
+                            Description
+                        </div>
+                    </div>
+                </div>
+                <!-- thumbnail item 4 -->
+                <div class="item" data-slide="4">
+                    <img src="./icon wed/img4.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Name Slider
+                        </div>
+                        <div class="description">
+                            Description
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- arrows -->
+            <div class="arrows">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+        
+            <!-- time running -->
+            <div class="time"></div>
         </div>
+        
+            <script src="./assets/script/app.js"></script>
 
         <div id="content">
             <div id="Band" class="content-section">
