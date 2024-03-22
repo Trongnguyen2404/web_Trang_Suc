@@ -198,7 +198,7 @@ a{
     animation: showThumbnail .5s linear 1 forwards;
 }
 .carousel.prev .list .item img{
-    z-index: 100;
+    z-index: 10;
 }
 @keyframes showThumbnail{
     from{
