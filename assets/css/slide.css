@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
     margin: 0;
-    background: url('./a-majestic-stag-stands-at-the-center-of-a-snowy-enchanted-forest-with-a-glowing-djfjmj2x.jpeg');
+    /* background: url('./a-majestic-stag-stands-at-the-center-of-a-snowy-enchanted-forest-with-a-glowing-djfjmj2x.jpeg'); */
     color: #eee;
     font-family: Poppins;
     font-size: 12px;
@@ -12,9 +12,9 @@ a{
     text-decoration: none;
 }
 .carousel{
-    height: 100vh;
-    margin-top: -50px;
-    width: 100vw;
+    height: 101vh;
+    margin-top: -10px;
+    width: 99vw;
     overflow: hidden;
     position: relative;
 }
@@ -79,7 +79,7 @@ a{
     bottom: 50px;
     left: 50%;
     width: max-content;
-    z-index: 100;
+    z-index: 2;
     display: flex;
     gap: 20px;
 }
@@ -113,23 +113,37 @@ a{
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: 2;
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
 }
+
+.arrows #next{
+    transform: translateX(960px);
+}
+.arrows #prev{
+    transform: translateX(280px);
+}
 .arrows button{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: rgb(113 113 113 / 14%);
     border: none;
     color: #fff;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
+}
+#userShop .user a 
+{
+    
+    text-transform: uppercase;
+    font-family: monospace;
+    color: #000;
 }
 .arrows button:hover{
     background-color: #fff;
@@ -198,7 +212,7 @@ a{
     animation: showThumbnail .5s linear 1 forwards;
 }
 .carousel.prev .list .item img{
-    z-index: 10;
+    z-index: 2;
 }
 @keyframes showThumbnail{
     from{
@@ -220,7 +234,7 @@ a{
 
 .carousel .time{
     position: absolute;
-    z-index: 1000;
+    z-index: 2;
     width: 0%;
     height: 3px;
     background-color: #f1683a;
@@ -291,5 +305,14 @@ a{
     }
     .carousel .list .item .content .title{
         font-size: 30px;
+    }
+}
+@media (max-width: 1500px) {
+    .carousel {
+        height: 101vh;
+        margin-top: -7px;
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
     }
 }

@@ -8,7 +8,7 @@ let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
 let timeDom = document.querySelector('.carousel .time');
 let timeRunning = 3000;
 let timeAutoNext = 7000;
-
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 // Add event listeners for next and prev buttons
 nextDom.onclick = function(){
     showSlider('next');    
@@ -87,7 +87,7 @@ function goToSlide(slideNumber) {
     let clickedIndex = thumbnailArray.findIndex(item => item.getAttribute('data-slide') === slideNumber);
 
     // Rearrange thumbnail items based on the clicked slide
-    thumbnailArray = thumbnailArray.slice(clickedIndex).concat(thumbnailArray.slice(0, clickedIndex));
+    thumbnailArray = thumbnailArray.slice(clickedIndex).concat(thumbnailArray.slice(0, clickedIndex+1));
     
     // Remove existing thumbnails and append the rearranged ones
     thumbnailBorderDom.innerHTML = ''; // Clear existing thumbnails
