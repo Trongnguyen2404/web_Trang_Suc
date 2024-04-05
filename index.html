@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Band</title>
+    <title>JULY JEWELRY</title>
     <link rel="icon" type="image/x-icon" href="./icon wed/JULY.png">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/slide.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.2.1-web/css/all.css">
+    <link rel="stylesheet" href="./aos-master/dist/aos.css">
+    <script src="./aos-master/dist/aos.js"></script>
 </head>
 <body>
     <div id="main">
         <div id="mainheader">
-            <div id="heade" class="header-zindex-2">
+            <div id="header" class="header-zindex-2">
                 <!-- begin nav -->
                 <img src="./icon wed/JULY.png" alt="" style="
                         position: absolute;
@@ -22,37 +24,14 @@
                         filter: drop-shadow(2px 1px 2px black);
                     ">
                <ul id="nav">
-                <!-- <li>
-                    <a href="" class="trangchu">
-                        HOME
-                        <i class="nav-arrow-down fa-solid fa-caret-down"></i>
-                    </a>
-                    <ul class="subnav">
-                        <li><a href="./coffee rang xay.html">Coffee rang xay</a></li>
-                        <li><a href="./coffee hoa tan.html">coffee hòa tan</a></li>
-                        <li><a href="./coffee cans.html">Coffee cans</a></li>
-                        
-                    </ul>
-                </li> -->
-                <!-- <li>
-                    <img src="./icon wed/JULY.png" alt="">
-                </li> -->
                 <li><a href="./thanhtoan.html">HOME</a></li>
-                <li><a href="./thanhtoan.html">RINGS</a></li>
+                <li><a href="#about">RINGS</a></li>
                 <li><a href="./Lienhe.html">BRACELETS</a></li>
                 <li><a href="./doitra.html">NECKLACES</a></li>
                 <li><a href="./doitra.html">HAIRPINS</a></li>
                 <li><a href="./doitra.html">ANKLETS</a></li>
-                <li><a href="./doitra.html">EARRINGS</a></li>
+                <li><a href="#product">EARRINGS</a></li>
                </ul>
-               <!-- <div class="search-box">
-                <div class="input-box">
-                    <input type="text" placeholder="">
-                </div>
-                <div class="search-button">
-                    <i class="seach-icon fa-solid fa-magnifying-glass"></i>
-                </div> -->
-
                <div id="userShop" class="inlineBlock">  
                 <div class="Shopping inlineBlock" >
                     <img src="./icon wed/giỏ hàng.png" alt="">
@@ -211,7 +190,7 @@
             
                 <div class="wrapper">
                     <section class="intro">
-                        <div class="logo">
+                        <div class="logo" data-aos="fade-up" data-aos-duration="1000">
                             New product
                         </div>
                         <div class="line"></div>
@@ -251,6 +230,17 @@
                             I WILL NOT grow if i cannot face superior opponents
                         </div>
                     </section>
+                    <section class="genos character">
+                        <div class="block"></div>
+                        <img src="./assets/img/genos.png" alt=""><span class="huge-text">Genos</span>
+                        <div class="caption">
+                            Genos is a fictional character from the Japanese manga and anime series, "One-Punch Man." He is a cyborg and the disciple of Saitama, the series' main protagonist. Genos was once a human, but after his hometown was destroyed by a mysterious villain, he was badly injured and almost died. In order to survive, he agreed to become a cyborg and was transformed into a powerful weapon.
+                        </div>
+                        <div class="nickname"><span>Nickname</span>Demon Cyborg</div>
+                        <div class="quote">
+                            I WILL NOT grow if i cannot face superior opponents
+                        </div>
+                    </section>
                     
             
                 </div>
@@ -259,54 +249,138 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
                 <script src="./assets/script/app1.js"></script>
             </div>
-            <!-- Tour -->
-            <div id="Tour" class="tour-section">
-                <div class="content-section">
-                    <h2 class="section-heading text-white">TOUR DATES</h2>
-                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
-                <!-- tiket -->
-                    <ul class="tikets-list">
-                        <li>September <span class="Sold-out">Sold out</span></li>
-                        <li>October <span class="Sold-out">Sold out</span></li>
-                        <li>November <span class="quantity">3</span></li>
-                    </ul>
-                    <!-- places -->
-                    <div class="row place-list">
-                        <div class="colum colum-three">
-                            <img src="./assets/img/places/newyork.jpg" alt="New York" class="place-img">
-                            <div class="place-body">
-                                <h3 class="place-heading">New York</h3>
-                                <p class="place-time">Fri 27 Nov 2016</p>
-                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy-btn js-buy-tiket">Buy Tikets</button>
-                            </div>
-                        </div>
-                        <div class="colum colum-three">
-                            <img src="./assets/img/places/paris.jpg" alt="Paris" class="place-img">
-                            <div class="place-body">
-                                <h3 class="place-heading">Paris</h3>
-                                 <p class="place-time">Fri 27 Nov 2016</p>
-                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy-btn js-buy-tiket">Buy Tikets</button>
-                            </div>
-                        </div>
-                        <div class="colum colum-three">
-                             <img src="./assets/img/places/sanfran.jpg" alt="Paris" class="place-img">
-                             <div class="place-body">
-                                <h3 class="place-heading">San Francisco</h3>
-                                <p class="place-time">Fri 27 Nov 2016</p>
-                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy-btn js-buy-tiket">Buy Tikets</button>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <div id="about" style="
+            position: relative;
+            width: 99vw;
+            height: 290vh;
+        ">
+        <div class="me aos-init aos-animate" style="
+            position: absolute;
+            top: 30px;
+            font-family: 'Bebas Neue';
+            font-size: 100px;
+            text-align: center;
+            width: 100%;
+            color: black;
+        " data-aos="fade-up" data-aos-duration="500">
+            JULY JEWELRY
+        </div>
+        <div>
+            <div style="
+                top: 40vh;
+                left: 275px;
+                position: absolute;
+                width: 270px;
+            " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                <img src="./icon wed/JULY-about1.jpg" alt="" style="
+                width: 100%;
+                height: 100%;
+            ">
             </div>
+            <div style="
+            color: black;
+            font-size: 20px;
+            font-family: math;
+            font-weight: 600;
+            position: absolute;
+            top: 40vh;
+            left: 610px;
+            width: 760px;
+        " data-aos="fade-left" data-aos-duration="1000" class="aos-init aos-animate">
+        <div style="
+        font-size: 25px;
+        padding-bottom: 10px;
+        ">   Welcome to July Jewelry</div>
+        <div style="
+            font-size: 22px;
+            text-align: justify;
+      " data-aos="fade-left" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+        </div>
+            </div>
+        </div>
+        <div>
+            <div style="
+                top: 130vh;
+                left: 1099px;
+                position: absolute;
+                width: 270px;
+            " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                <img src="./icon wed/JULY-about1.jpg" alt="" style="
+                width: 100%;
+                height: 100%;
+            ">
+            </div>
+            <div style="
+            color: black;
+            font-size: 20px;
+            font-family: math;
+            font-weight: 600;
+            position: absolute;
+            top: 130vh;
+            left: 274px;
+            width: 760px;
+        " data-aos="fade-left" data-aos-duration="1000" class="aos-init aos-animate">
+        <div style="
+        font-size: 25px;
+        padding-bottom: 10px;
+        ">   Welcome to July Jewelry</div>
+        <div style="
+            font-size: 22px;
+            text-align: justify;
+      " data-aos="fade-left" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+        </div>
+            </div>
+        </div>
+        <div>
+            <div style="
+                top: 220vh;
+                left: 275px;
+                position: absolute;
+                width: 270px;
+            " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                <img src="./icon wed/JULY-about1.jpg" alt="" style="
+                width: 100%;
+                height: 100%;
+            ">
+            </div>
+            <div style="
+            color: black;
+            font-size: 20px;
+            font-family: math;
+            font-weight: 600;
+            position: absolute;
+            top: 220vh;
+            left: 610px;
+            width: 760px;
+        " data-aos="fade-left" data-aos-duration="1000" class="aos-init aos-animate">
+        <div style="
+        font-size: 25px;
+        padding-bottom: 10px;
+        ">   Welcome to July Jewelry</div>
+        <div style="
+            font-size: 22px;
+            text-align: justify;
+      " data-aos="fade-left" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+        </div>
+            </div>
+        </div>
+    </div>
+            
+            <!-- Tour -->
             <!-- contact -->
             <div id="Contact" class="content-section">
                 <h2 class="section-heading">CONTACT</h2>
-                <p class="section-sub-heading">Fan? Drop a note!</p>
+                <!-- <p class="section-sub-heading">Fan? Drop a note!</p> -->
+                <div style="
+                    font-size: 22px;
+                    font-family: math;
+                    color: black;
+                    text-align: center;
+                    margin: 0 210px;
+                ">
+                    <div>We warmly welcome any feedback from our customers regarding our products and services. Please fill out the form below or contact us via phone or email to share your thoughts. We commit to utilizing all feedback to continuously improve and optimize your experience.</div>
+                    <div>For customers interested in custom jewelry orders or requiring face-to-face consultations, please contact us via the phone or email provided below. We will provide prompt and professional assistance and advice.</div>
+                </div>
                 <div class="row contact-concent">
                     <div class="colum colum-two contact-info">
                         <p><i class="fa-solid fa-location-dot" style="color: #19191a;"></i>Chicago, US</p>
@@ -350,60 +424,8 @@
             </div>
         </div>
     </div>
-    <div class="modal js-modal">
-        <div class="modal-container js-modal-cpntainer">
-            <div class="modal-colse js-modal-close">
-                <i class="modal-icon-close fa-solid fa-xmark"></i>
-            </div>
-            <header class="modal-header">
-                <i class="modal-icon fa-solid fa-suitcase"></i>
-                Tickets
-            </header>
-            <div class="modal-body">
-                <label for="How many" class="modal-label">
-                <i class="fa-solid fa-cart-shopping"></i>
-                 Tickets, $15 per person
-                </label>
-            <input id="How many" type="text" class="moda-input" placeholder="How many?">
-            
-            <label for="Enter email" class="modal-label">
-                <i class="fa-solid fa-user"></i>
-                 Send To
-                </label>
-            <input id="Enter email" type="email" class="moda-input" placeholder="Enter email">
-            <button id="buy-tiket">
-                PAY
-                <i class="fa-solid fa-check" style="color: #ffffff;"></i>
-            </button>
-            </div>
-            <footer class="modal-footer">
-                <p class="modal-help">Need <a href="">help?</a></p>
-            </footer>
-        </div>
-    </div>
     <script>
-        const header = document.querySelector('#header')
-        const buyBtns = document.querySelectorAll('.js-buy-tiket')
-        const modal = document.querySelector('.js-modal')
-        const modalclose =document.querySelector('.js-modal-close')
-        const modalcontainer=document.querySelector('.js-modal-cpntainer')
-        function showBuyTikets() {
-            modal.classList.add('open')
-            header.classList.remove('header-zindex-1')
-        }
-        function closeBuyTikets() {
-            modal.classList.remove('open')
-            header.classList.add('header-zindex-1')
-        }
-
-        for (const buyBtn of buyBtns) {
-            buyBtn.addEventListener('click', showBuyTikets)
-        }
-        modalclose.addEventListener('click', closeBuyTikets)
-        modal.addEventListener('click', closeBuyTikets)
-        modalcontainer.addEventListener('click', function(even){
-            even.stopPropagation()
-        })
-    </script>
+        AOS.init();
+      </script>
 </body>
 </html>
