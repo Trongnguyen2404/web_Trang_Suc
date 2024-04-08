@@ -28,8 +28,8 @@ html {
     text-align: center;
 }
 .row{
-    margin-left: -8px;
-    margin-right: -8px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .row::after{
     content: "";
@@ -183,8 +183,7 @@ html {
 }    
 #userShop .Shopping
 {
-    right: 110px;
-    position: absolute;
+    position: relative;
     top: 10px;
     padding: 10px;
     color: black;
