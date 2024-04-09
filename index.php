@@ -36,17 +36,24 @@
                 <div class="Shopping inlineBlock" >
                     <img src="./icon_wed/giỏ hàng.png" alt="">
                 </div>
-                <div class="user inlineBlock">
-                    <?php
-                        session_start();
+                <div class="user inlineBlock" onclick="redirectToLink()" style="cursor: pointer;">
+                        <?php
+                            session_start();
 
-                        if (isset($_SESSION['login_id']) && isset($_SESSION['login_user'])) {
-                            echo '<a href="doipass.php" >' . $_SESSION['login_user'] . '</a>';
-                        } else {
-                            echo '<i class="fa-regular fa-user"><a href="./login.php"> login</a></i>';
-                        }
-                    ?>
+                            if (isset($_SESSION['login_id']) && isset($_SESSION['login_user'])) {
+                                echo '<a href="doipass.php">' . $_SESSION['login_user'] . '</a>';
+                            } else {
+                                echo '<i class="fa-regular fa-user"><a href="./login.php"> login</a></i>';
+                            }
+                        ?>
                 </div>
+
+            <script>
+                function redirectToLink() {
+                    var link = document.querySelector('.user a').getAttribute('href');
+                    window.location.href = link;
+                }
+            </script>
                 
             </div>
                 <!-- end nav -->

@@ -52,7 +52,7 @@
         margin-bottom: 5px;
     }
     .form-control {
-        width: 100%;
+        width: 98%;
         color: white;
         padding: 12px;
         border: 2px solid #537b35;
@@ -96,18 +96,19 @@
 <body>
 <div class="container">
     <div class="icon_wed">
-        <img src="./icon_wed/JULY.png" alt="" style="
-        position: absolute;
-        width: 190px;
-        top: 5px;
-        left: -3px;
-        height: 67px;
-        background: #f7f7f7f5;
+        <img src="./icon_wed/July1.png" alt="" style="
+position: absolute;
+    width: 130px;
+    top: 1px;
+    height: 80px;
+    left: 1px;
     ">
     </div>
     
     <form action="xulydangky.php" method="post" onsubmit="return validateForm()">
-        <div class="form-group">
+        <div class="form-group" style="
+    margin: 0 0 0 0;
+">>
             <h4 class="border-bottom pb-2 text-center">sign up</h4>
         </div>
         <div class="form-group">

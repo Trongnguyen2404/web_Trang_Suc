@@ -25,10 +25,22 @@ $u = $_SESSION['login_user'];//username dang dang nhap
         -webkit-background-size: cover !important;
         background: url('./icon_wed/b2.jpg');
     }
+    .container-1 {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        right: 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+    }
     .container {
         position: absolute;
         left: 0;
-        top: 10%;
+        top: 200px;
         right: 0;
         margin: 0 auto;
         width: 100%;
@@ -60,7 +72,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
         margin-bottom: 5px;
     }
     .form-control {
-        width: 100%;
+        width: 98%;
         color: white;
         padding: 12px;
         border: 2px solid #537b35;
@@ -78,7 +90,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
         text-decoration: none;
         font-size: 16px;
         cursor: pointer;
-        width: 610px;
+        width: 100%;
     }
     .btn-primary:hover {
         background-color: #0056b3;
@@ -92,7 +104,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
     .text-secondary {
         color: #ffffff;
     }
-    .container .icon_wed :hover {
+    .container-1 .icon_wed :hover {
         box-shadow: rgba(0, 0, 0, 0.2) 0px 0.2rem 1.2rem 0px;
         transform: scale(1.02);
         cursor: pointer;
@@ -100,49 +112,44 @@ $u = $_SESSION['login_user'];//username dang dang nhap
 </style>
 </head>
 <body>
-<div class="container">
-    <div class="icon_wed">
-        <img src="./icon_wed/JULY.png" alt="" style="
-        position: absolute;
-        width: 190px;
-        top: 5px;
-        left: -3px;
-        height: 67px;
-        background: #f7f7f7f5;
-    ">
-    </div>
-    <div class="col-5 m-auto bg-secondary p-2 text-white">
-            <div class="form-group" >
-                <h4 class="border-bottom pb-2" style="text-align: center;">Đăng xuất</h4>
+    <div class="container-1">
+        <div class="icon_wed">
+            <img src="./icon_wed/july1.png" alt="" style="
+            position: absolute;
+            width: 130px;
+            top: 1px;
+            height: 80px;
+            left: 1px;
+        ">
+        </div>
+        <div class="col-5 m-auto bg-secondary p-2 text-white">
+                <div class="form-group" style="
+                    margin: 0 0 0 0;
+                    ">
+                    <h4 class="border-bottom pb-2" style="text-align: center;">Đăng xuất</h4>
+                </div>
+    
+                <form action="xulydangxuat.php" method="post" class="col-5 m-auto bg-secondary p-2 text-white" id="logoutForm">
+                    <!-- Các trường và nút submit trong form -->
+                    <input name="btn" type="submit" value="Tiếp tục" class="btn btn-primary" > 
+                </form>
             </div>
-
-            <form action="xulydangxuat.php" method="post" class="col-5 m-auto bg-secondary p-2 text-white" id="logoutForm">
-                <!-- Các trường và nút submit trong form -->
-                <input name="btn" type="submit" value="Tiếp tục" class="btn btn-primary" style="
-    width: 100%;
-"> 
-            </form>
-            <div class="form-group" style="
+    
+            <script>
+                const continueButton = document.getElementById('continueButton');
+                const logoutForm = document.getElementById('logoutForm');
+    
+                continueButton.addEventListener('click', function() {
+                    // Khi nút "Tiếp tục" được nhấn, sử dụng form
+                    logoutForm.submit();
+                });
+            </script>
+    </div>
+<div class="container">
+    <form action="xulydoipass.php" method="post" id="frmlogin" class="col-5 m-auto bg-secondary p-2 text-white">
+        <div class="form-group" style="
     margin: 0;
 ">
-                <button class="btn btn-primary" onclick="history.back()" style="
-    width: 100%;
-    bottom: 50px;
-">Trở lại</button>
-            </div>
-        </div>
-
-        <script>
-            const continueButton = document.getElementById('continueButton');
-            const logoutForm = document.getElementById('logoutForm');
-
-            continueButton.addEventListener('click', function() {
-                // Khi nút "Tiếp tục" được nhấn, sử dụng form
-                logoutForm.submit();
-            });
-        </script>
-    <form action="xulydoipass.php" method="post" id="frmlogin" class="col-5 m-auto bg-secondary p-2 text-white">
-        <div class="form-group">
         <h4 class="border-bottom pb-2"  style="text-align: center;">ĐỔI MẬT KHẨU</h4>
         </div>
         <div class="form-group">
@@ -166,12 +173,29 @@ $u = $_SESSION['login_user'];//username dang dang nhap
                 right: 22px;
             ">Quên mật khẩu?</a>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="
+    margin: 0;
+">
             <input name="btn" type="submit" value="Cập nhật" class="btn btn-primary"/> 
         </div>
-    </form>
+        <div style="
+            height: 46px;
+        ">
+            <div class="form-group" style="
+                            margin: 20px 0 0 0;
+                        display: block;
+                        width: 40%;
+                    ">
+                            <button class="btn btn-primary" onclick="history.back()" style="
+                        width: 100%;
+                        display: inline-block;
+                        float: left;
+                        background-color: #6493fd !important;
+                    ">Trở lại</button>
+            </div>
+            <div id="error-message" style="color: red;bottom: 0;float: right;padding: 27px 0 0 0;">Mật khẩu cũ không đúng</div>
+        </div>
 
-    <div id="error-message" style="color: red;"></div>
 
     <script>
 // Hàm hiển thị thông báo lỗi
