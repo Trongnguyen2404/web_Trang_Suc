@@ -1,19 +1,30 @@
+<?php
+require_once("functions.php");
+$idHH = $_GET['idHH'];
+settype($idHH, "int");
+$TheLoai=layChiTietTheloai($idHH);
+if (isset($_SESSION['login_id'])==false){
+    $_SESSION['thongbao']="Bạn chưa đăng nhập";
+    header("Location: login.php");
+    exit();
+}
+if ($_SESSION['login_group']!=0){
+    $_SESSION['thongbao']="Bạn không phải là admin";
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php
-require_once("functions.php");
-    $idHH = $_GET['idHH'];
-    settype($idHH, "int");
-    $TheLoai=layChiTietTheloai($idHH);
-?>
-
-    <meta charset="UTF-8">
-    <title>Thêm Thể Loại</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SỬA THỂ LOẠI</title>
+<link rel="stylesheet" href="./assets/css/style1.css">
 </head>
 <body>
-    <h4 class="col-10 m-auto p-2 text-center">SỬA THỂ LOẠI</h4>
+
+<h4 class="col-10 m-auto p-2 text-center">SỬA THỂ LOẠI</h4>
     <form action="xulysuatheloai.php?idHH=<?=$idHH?>" method="post" class="border border-primary col-10 m-auto p-2" enctype="multipart/form-data">
         <div class="form-group">
             <label>Tên hàng hóa</label> 

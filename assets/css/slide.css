@@ -14,7 +14,7 @@ a{
 .carousel{
     height: 101vh;
     margin-top: -10px;
-    width: 99vw;
+    width: 100%;
     overflow: hidden;
     position: relative;
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search by Category</title>
+  <style>
+    /* Styles for search container */
+    .search-container {
+      margin: 20px;
+    }
+
+    /* Styles for search input */
+    #searchInput {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    /* Styles for search button */
+    button {
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <select id="categorySelect">
+      <option value="all">All</option>
+      <option value="category1">Category 1</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+      <!-- Add more categories as needed -->
+    </select>
+    <button onclick="search()">Search</button>
+  </div>
+  <div id="resultsContainer">
+    <!-- Search results will be displayed here -->
+  </div>
+
+  <script>
+    function search() {
+      var input, filter, select, option, resultsContainer, resultItems, i, txtValue;
+      input = document.getElementById('searchInput');
+      select = document.getElementById('categorySelect');
+      filter = input.value.toUpperCase();
+      option = select.value;
+      resultsContainer = document.getElementById('resultsContainer');
+      resultItems = resultsContainer.getElementsByTagName('div');
+
+      for (i = 0; i < resultItems.length; i++) {
+        var category = resultItems[i].getAttribute('data-category');
+        if (category === option || option === 'all') {
+          txtValue = resultItems[i].textContent || resultItems[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            resultItems[i].style.display = '';
+          } else {
+            resultItems[i].style.display = 'none';
+          }
+        } else {
+          resultItems[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

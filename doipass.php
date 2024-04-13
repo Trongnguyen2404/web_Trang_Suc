@@ -193,7 +193,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
                         background-color: #6493fd !important;
                     ">Trở lại</button>
             </div>
-            <div id="error-message" style="color: red;bottom: 0;float: right;padding: 27px 0 0 0;">Mật khẩu cũ không đúng</div>
+            <div id="error-message" style="color: red;bottom: 0;float: right;padding: 27px 0 0 0;"></div>
         </div>
 
 

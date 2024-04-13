@@ -13,7 +13,7 @@ try {
 function layDanhSachKhachHang()
 {
     global $conn;
-    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai, phai, SoThich 
+    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai
             FROM users 
             WHERE idgroup = 1
             ORDER BY ngay";
@@ -23,7 +23,7 @@ function layDanhSachKhachHang()
 function layDanhSachadmin()
 {
     global $conn;
-    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai, phai, SoThich 
+    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai
             FROM users 
             WHERE idgroup = 0
             ORDER BY ngay";
@@ -44,7 +44,7 @@ function xoaKhachHang($idUser){
 function layDanhSachKhachhangByKeyword($keyword)
 {
     global $conn;
-    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai, phai, SoThich 
+    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai 
             FROM users 
             WHERE username LIKE :keyword AND idgroup = 1
             ORDER BY ngay";
@@ -63,7 +63,7 @@ if(isset($_GET['search'])) {
 function layDanhSachadminByKeyword($keyword)
 {
     global $conn;
-    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai, phai, SoThich 
+    $sql = "SELECT idUser, pass, idgroup, username, email, ngay, SoDienThoai
             FROM users 
             WHERE username LIKE :keyword AND idgroup = 0
             ORDER BY ngay";
