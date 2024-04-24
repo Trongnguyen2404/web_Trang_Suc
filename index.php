@@ -363,21 +363,35 @@
                         <p><i class="fa-solid fa-envelope"></i>Email: mail@mail.com</p>
                     </div>
                     <div class="colum colum-two contact-form">
-                        <form action="">
+                    <form id="review_form">
                             <div class="row">
                                 <div class="colum colum-two">
-                                    <input type="text" name="" placeholder="Name" required id="form-control">                                
+                                    <input type="text" name="user_name" placeholder="Name" required="" class="user_name" style="
+                            padding: 10px;
+                            width: 100%;
+                        ">                                
                                 </div>
                                 <div class="colum colum-two ">
-                                    <input type="email" name="" placeholder="Email" required id="form-control">                                
-                                </div>
+                                    <input type="email" name="email" placeholder="Email" required="" class="email" style="
+                            width: 100%;
+                            padding: 10px;
+                        ">                                
+                                </div>  
                             </div>
                             <div class="row mt-8">
                                 <div class="colum colum-full ">
-                                    <input type="text" name="" placeholder="Message" required id="form-control">                                
+                                    <input type="text" name="user_review" placeholder="Message" required="" class="user_review" style="
+                            width: 100%;
+                            padding: 10px;
+                        ">                                
                                 </div>
                             </div>
-                            <input type="submit" value="SEND" class="form-submit-btn mt-16">
+                            <button type="button" class="btn btn-primary" id="save_review" style="
+                            float: right;
+                            margin: 10px 18px;
+                            padding: 10px;
+                            font-size: 14px;
+                        ">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -404,3 +418,58 @@
       </script>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script>
+let notifications = document.querySelector('.notifications');
+
+function createToast(type, icon, title, text){
+    let newToast = document.createElement('div');
+    newToast.innerHTML = `
+        <div class="toast ${type}">
+            <i class="${icon}"></i>
+            <div class="content">
+                <div class="title">${title}</div>
+                <span>${text}</span>
+            </div>
+            <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+        </div>`;
+    notifications.appendChild(newToast);
+    newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+}
+
+$(document).ready(function(){
+    $('#save_review').click(function(){
+        
+        var user_name = $('.user_name').val();
+        var email = $('.email').val();
+        var user_review = $('.user_review').val();
+
+        if(user_name == '' || email == '' || user_review == ''){
+            alert("Vui lòng điền đầy đủ thông tin.");
+            return false;
+        } else {
+            $.ajax({
+                url:"connnec_submit.php",
+                method:"POST",
+                data:{
+                    user_name: user_name,
+                    email: email,
+                    user_review: user_review,
+                },
+                success:function(response){
+                    alert("Vui lòng điền đầy đủ thông tin.");
+                    createToast('success', 'fa-solid fa-check-circle', 'Success', response);
+                    $('#review_form')[0].reset(); // Reset form sau khi gửi thành công
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    createToast('error', 'fa-solid fa-times-circle', 'Error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
+                }
+            });
+        }
+    });
+});
+
+
+</script>

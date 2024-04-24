@@ -40,7 +40,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="index.php?page=theloai_ds">
+                        <a href="index.php?page=hanghoa_ds">
                           <p>list of products</p>
                         </a>
                       </li>
@@ -58,7 +58,7 @@
           session_start();
           $page = isset($_GET['page']) ? trim(strip_tags($_GET['page'])) : '';
           switch($page){
-              case "theloai_ds": require_once 'Theloai_ds.php';break;
+              case "hanghoa_ds": require_once 'hanghoa_ds.php';break;
               case "Theloai_them": require_once 'Theloai_them.php';break;
               case "theloai_sua": require_once 'Theloai_sua.php';break;
               case "khachhang_ds": require_once 'khachhang_ds.php';break;

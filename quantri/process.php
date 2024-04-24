@@ -3,34 +3,44 @@ require_once("functions.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn'])) {
     $TenHH = $_POST['TenHH'];
+    $Gia = $_POST['Gia'];
     $SoLuong = $_POST['SoLuong'];
-    $AnHien = $_POST['AnHien'];
+    $NoiDung = $_POST['NoiDung'];
     $LoaiHH = $_POST['LoaiHH'];
-    $Anh = $_FILES['Anh']['name']; // Tên tệp tin được tải lên
-
+    $AnHien = $_POST['AnHien'];
+    $DeXuat = $_POST['DeXuat'];
+    $ChatLieu = $_POST['ChatLieu'];
+    $DonDoi = $_POST['DonDoi'];
+    
     $tenHH = trim(strip_tags($TenHH));
-    $SoLuong = (int)$SoLuong;
-    $AnHien = (int)$AnHien;
-    $LoaiHH = (int)$LoaiHH;
+    $gia = (int)$Gia;
+    $soLuong = (int)$SoLuong;
+    $noiDung = trim(strip_tags($NoiDung)); // Chuyển kiểu dữ liệu và xóa các tag HTML
+    $loaiHH = (int)$LoaiHH;
+    $anHien = (int)$AnHien;
+    $deXuat = (int)$DeXuat;
+    $chatLieu = (int)$ChatLieu;
+    $donDoi = (int)$DonDoi;
 
-    $target_dir = "./icon/"; // Đường dẫn tương đối đúng tới thư mục "icon web"
-    $target_file = $target_dir . basename($_FILES["Anh"]["name"]);
+    // Upload multiple images
+    $target_dir = "./icon/";
+    $uploaded_images = [];
 
-    // Di chuyển tệp tải lên vào thư mục được chỉ định
-    if (move_uploaded_file($_FILES["Anh"]["tmp_name"], $target_file)) {
-        echo "Tệp " . htmlspecialchars(basename($_FILES["Anh"]["name"])) . " đã được tải lên thành công.";
-
-        // Thực hiện thêm dữ liệu vào cơ sở dữ liệu
-        $kq = themTheLoai($tenHH, $SoLuong, $AnHien, $LoaiHH, $Anh);
-
-        if ($kq) {
-            header("location: index.php?page=theloai_ds");
-            exit();
-        } else {
-            echo "Có lỗi khi thêm dữ liệu vào cơ sở dữ liệu.";
+    foreach (['Anh1', 'Anh2', 'Anh3', 'Anh4'] as $fieldName) {
+        $target_file = $target_dir . basename($_FILES[$fieldName]["name"]);
+        if (move_uploaded_file($_FILES[$fieldName]["tmp_name"], $target_file)) {
+            $uploaded_images[] = htmlspecialchars(basename($_FILES[$fieldName]["name"]));
         }
+    }
+
+    // Thực hiện thêm dữ liệu vào cơ sở dữ liệu
+    $kq = themHangHoa($tenHH, $gia, $soLuong, $noiDung, $uploaded_images, $loaiHH, $anHien, $deXuat, $chatLieu, $donDoi);
+
+    if ($kq) {
+        header("location: index.php?page=hanghoa_ds");
+        exit();
     } else {
-        echo "Có lỗi khi tải lên tệp.";
+        echo "Có lỗi khi thêm dữ liệu vào cơ sở dữ liệu.";
     }
 }
 ?>

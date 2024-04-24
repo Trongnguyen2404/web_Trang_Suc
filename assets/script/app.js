@@ -7,7 +7,7 @@ let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
 let timeDom = document.querySelector('.carousel .time');
 let timeRunning = 3000;
-let timeAutoNext = 70000;
+let timeAutoNext = 7000;
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 // Add event listeners for next and prev buttons
 nextDom.onclick = function(){

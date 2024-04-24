@@ -24,38 +24,38 @@
                         filter: drop-shadow(2px 1px 2px black);
                     ">
                <ul id="nav">
-                <li><a href="./index.php">HOME</a></li>
-                <li><a href="./ring.php">RINGS</a></li>
-                <li><a href="./Lienhe.html">BRACELETS</a></li>
-                <li><a href="./doitra.html">NECKLACES</a></li>
-                <li><a href="./doitra.html">HAIRPINS</a></li>
-                <li><a href="./doitra.html">ANKLETS</a></li>
-                <li><a href="#product">EARRINGS</a></li>
+                <li><a href="./page.php?page=0">HOME</a></li>
+                <li><a href="./page.php?page=1">RINGS</a></li>
+                <li><a href="./page.php?page=2">BRACELETS</a></li>
+                <li><a href="./page.php?page=3">NECKLACES</a></li>
+                <li><a href="./page.php?page=4">HAIRPINS</a></li>
+                <li><a href="./page.php?page=5">ANKLETS</a></li>
+                <li><a href="./page.php?page=6">EARRINGS</a></li>
                </ul>
                <div id="userShop" class="inlineBlock">  
-                <div class="Shopping inlineBlock" >
-                    <img src="./icon_wed/giỏ hàng.png" alt="">
-                </div>
-                <div class="user inlineBlock" onclick="redirectToLink()" style="cursor: pointer;">
-                        <?php
-                            session_start();
+                    <div class="Shopping inlineBlock" >
+                        <img src="./icon_wed/giỏ hàng.png" alt="">
+                    </div>
+                    <div class="user inlineBlock" onclick="redirectToLink()" style="cursor: pointer;">
+                            <?php
+                                session_start();
 
-                            if (isset($_SESSION['login_id']) && isset($_SESSION['login_user'])) {
-                                echo '<a href="doipass.php">' . $_SESSION['login_user'] . '</a>';
-                            } else {
-                                echo '<i class="fa-regular fa-user"><a href="./login.php"> login</a></i>';
-                            }
-                        ?>
-            </div>
+                                if (isset($_SESSION['login_id']) && isset($_SESSION['login_user'])) {
+                                    echo '<a href="doipass.php">' . $_SESSION['login_user'] . '</a>';
+                                } else {
+                                    echo '<i class="fa-regular fa-user"><a href="./login.php"> login</a></i>';
+                                }
+                            ?>
+                    </div>
 
-            <script>
-                function redirectToLink() {
-                    var link = document.querySelector('.user a').getAttribute('href');
-                    window.location.href = link;
-                }
-            </script>
+                    <script>
+                        function redirectToLink() {
+                            var link = document.querySelector('.user a').getAttribute('href');
+                            window.location.href = link;
+                        }
+                    </script>
                 
-            </div>
+                </div>
                 <!-- end nav -->
 
                 <div id="search" class="inlineBlock">
