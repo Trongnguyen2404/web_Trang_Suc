@@ -168,7 +168,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
             <a href="dangky.php" class="text-secondary" style="
                 margin: 0 0 0 4px;
             "></a>
-            <a href="quenpass.php" class="text-secondary text-right" style="
+            <a href="Forgotpassword.php" class="text-secondary text-right" style="
                 position: absolute;
                 right: 22px;
             ">Quên mật khẩu?</a>

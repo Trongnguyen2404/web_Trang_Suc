@@ -10,7 +10,46 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./hang hoa/details.html">
     <link rel="stylesheet" href="./assets/css/style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+<style>
+  .card {
+    overflow-y: scroll;
+    padding: 20px 0;
+    position: relative;
+    margin: 100px 0 0 0;
+    background: #fff;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 600px;
+    box-shadow: 1px 1px 18px 1px #00000059;
+    border: 1px solid #00000038;
+    border-radius: 15px;
+}
+.top-card{
+  width: 100%;
+    height: 50px;
+    position: absolute;
+    border-bottom: 1px solid #614c003b;
+}
+.Name-card {
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+    display: inline-block;
+    margin: 13px;
+}
+.search {
+    min-width: 600px;
+    display: inline-block;
+    margin: 6px;
+}
+a{
+  text-decoration: none;
+  color:blue;
+}
+</style>
 <body style="height: 100%;">
     <div class="row">
         <div class="rightcolumn">
@@ -35,7 +74,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="index.php?page=yeucau_ds">
+                        <a href="index.php?page=customer_ds">
                           <p>customer's request</p>
                         </a>
                       </li>
@@ -54,29 +93,33 @@
         </div>
         <div class="leftcolumn">
           <?php
-          require_once "connectdb.php";
-          session_start();
-          $page = isset($_GET['page']) ? trim(strip_tags($_GET['page'])) : '';
-          switch($page){
-              case "hanghoa_ds": require_once 'hanghoa_ds.php';break;
-              case "Theloai_them": require_once 'Theloai_them.php';break;
-              case "theloai_sua": require_once 'Theloai_sua.php';break;
-              case "khachhang_ds": require_once 'khachhang_ds.php';break;
-              case "admin_ds": require_once 'admin_ds.php';break;
-              case "admin_them": require_once 'admin_them.php';break;
-          }
-          if (isset($_SESSION['login_id'])==false){
-              $_SESSION['thongbao']="Bạn chưa đăng nhập";
-              header("Location: login.php");
-              exit();
-          }
-          if ($_SESSION['login_group']!=0){
-              $_SESSION['thongbao']="Bạn không phải là admin";
-              header("Location: login.php");
-              exit();
-          }
-          ?>
+              require_once "connectdb.php";
+              session_start();
+              $page = isset($_GET['page']) ? trim(strip_tags($_GET['page'])) : '';
+              switch($page){
+                  case "hanghoa_ds": require_once 'hanghoa_ds.php';break;
+                  case "Theloai_them": require_once 'Theloai_them.php';break;
+                  case "customer_ds": require_once 'customer.php';break;
+                  case "khachhang_ds": require_once 'khachhang_ds.php';break;
+                  case "admin_ds": require_once 'admin_ds.php';break;
+                  case "oder_ds": require_once 'oder.php';break;
+                  case "admin_them": require_once 'admin_them.php';break;
+                  case "Theloai_sua": require_once 'Theloai_sua.php';break;
+              }
+              if (isset($_SESSION['login_id'])==false){
+                  $_SESSION['thongbao']="Bạn chưa đăng nhập";
+                  header("Location: login.php");
+                  exit();
+              }
+              if ($_SESSION['login_group']!=0){
+                  $_SESSION['thongbao']="Bạn không phải là admin";
+                  header("Location: login.php");
+                  exit();
+              }
+              ?>
+          
           </div>
       </div>
 </body>
+
 </html>

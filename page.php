@@ -23,6 +23,9 @@ switch ($page) {
     case 6:
         include 'ring.php'; // Trang cho EARRINGS
         break;
+    case 7:
+        include 'allproduct.php'; // Trang cho EARRINGS
+        break;
     default:
         include 'error.php'; // Trang lỗi cho các giá trị khác
         break;

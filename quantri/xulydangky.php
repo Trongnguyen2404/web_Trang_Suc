@@ -11,25 +11,15 @@ $SoDienThoai = $_POST['SoDienThoai'];
 $pass = $_POST['pass'];
 $repass = $_POST['repass'];
 $email = $_POST['email'];
-$phai = $_POST['phai'];
-$sothich = $_POST['sothich'];
 
 $u = trim(strip_tags($u));
 $pass = trim(strip_tags($pass));
 $repass = trim(strip_tags($repass));
 $email = trim(strip_tags($email));
-$phai = (int)$phai;
-$sothich = (int)$sothich;
 
 $loi = "";
 if (strlen($SoDienThoai) != 10 || !is_numeric($SoDienThoai)) {
     $loi .= "Số điện thoại không hợp lệ<br>";
-}
-if ($sothich != 1 && $sothich != 0 && $sothich != 2) {
-    $loi .= "Chọn sở thích đi nha bạn<br>";
-}
-if ($phai != 0 && $phai != 1) {
-    $loi .= "Chọn phái đi nha bạn<br>";
 }
 if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
     $loi .= "Email không đúng<br>";
@@ -59,12 +49,12 @@ if ($loi != "") {
         echo "Tên đăng ký đã tồn tại, vui lòng chọn tên khác.";
     } else {
         // Thêm người dùng mới vào cơ sở dữ liệu
-        $sql = "INSERT INTO users(username, pass, email, SoDienThoai, phai, sothich, ngay, idgroup) VALUES (?, ?, ?, ?, ?, ?, Now(), 0)";
+        $sql = "INSERT INTO users(username, pass, email, SoDienThoai, ngay, idgroup) VALUES (?, ?, ?, ?, Now(), 0)";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$u, $pass, $email, $SoDienThoai, $phai, $sothich]);
+        $stmt->execute([$u, $pass, $email, $SoDienThoai]);
 
         if ($stmt->rowCount() == 1) {
-            header("location: http://localhost/TheCoffee/quantri/index.php?page=admin_ds");
+            header("location: http://localhost/web_Trang_Suc/quantri/index.php?page=admin_ds");
             //gửi mail
         } else {
             echo "Cập nhật không thành công";

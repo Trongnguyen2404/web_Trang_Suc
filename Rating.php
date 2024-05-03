@@ -219,20 +219,27 @@ $u = $_SESSION['login_user'];//username dang dang nhap
 
 <script>
 let notifications = document.querySelector('.notifications');
+let canShowToast = true; // Biến để kiểm tra xem có thể hiển thị thông báo mới hay không
 
 function createToast(type, icon, title, text){
-    let newToast = document.createElement('div');
-    newToast.innerHTML = `
-        <div class="toast ${type}">
-            <i class="${icon}"></i>
-            <div class="content">
-                <div class="title">${title}</div>
-                <span>${text}</span>
-            </div>
-            <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
-        </div>`;
-    notifications.appendChild(newToast);
-    newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+    if (canShowToast) { // Kiểm tra trạng thái hiển thị của thông báo
+        let newToast = document.createElement('div');
+        newToast.innerHTML = `
+            <div class="toast ${type}">
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>
+                </div>
+                <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove(); canShowToast = true;"></i>
+            </div>`;
+        notifications.appendChild(newToast);
+        newToast.timeOut = setTimeout(() => {
+            newToast.remove();
+            canShowToast = true; // Thiết lập lại biến sau khi thông báo biến mất
+        }, 5000);
+        canShowToast = false; // Đặt biến để ngăn không hiển thị thông báo mới
+    }
 }
 
 $(document).ready(function(){

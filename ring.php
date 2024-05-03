@@ -36,6 +36,10 @@ $recommendedProducts = getRecommendedProductsByPage($page);
 $recommendedProducts1 = getRecommendedProductsByPage1($page);
 ?>
 <style>
+    html {
+    scroll-behavior: smooth;
+
+}
 .dropdown-list-item.active,
 .dropdown-list1-item.active,
 .dropdown-list2-item.active, 
@@ -127,16 +131,17 @@ button.btn {
     width: 100%;
     text-align: center;
     padding: 0px;
+    margin-bottom: 10px;
 }
-.card-news .product .product-price
-{
-  color: #ff7878;
+.card-news .product .product-price {
+    color: #f86969;
     float: left;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
     padding: 0px;
     font-size: 16px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Thêm định dạng thẻ cho bài viết */
@@ -426,11 +431,15 @@ button.btn {
             </div>
             </a>
             <a href="./product.php?idHH=<?php echo $product['idHH']; ?>" class="product-price">$<?php echo number_format($product['Gia']); ?></a>
-            <button type="button" class="btn">
-                Add To Cart 
+            <button type="button" class="btn addcard"
+                    data-idHH="<?php echo $product['idHH']; ?>"
+                    data-name="<?php echo $product['TenHH']; ?>"
+                    data-image="<?php echo $product['Anh1']; ?>"
+                    data-price="<?php echo $product['Gia']; ?>">
+                Add to Cart 
             </button>
-            <button type="button" class="btn float-right">
-                Buy Now 
+            <button type="button" class="btn float-right" onclick="redirectToPayPage('<?php echo $product['idHH']; ?>', '<?php echo $product['TenHH']; ?>', '<?php echo $product['Anh1']; ?>', '<?php echo $product['Gia']; ?>')">
+                Buy Now
             </button>
         </div>
     </div>
@@ -568,11 +577,15 @@ button.btn {
               </div>
             </a>
             <a href="./product.php?idHH=<?php echo $product['idHH']; ?>" class="product-price">$<?php echo number_format($product['Gia']); ?></a>
-            <button type="button" class="btn">
+            <button type="button" class="btn addcard" 
+                    data-idHH="<?php echo $product['idHH']; ?>"
+                    data-name="<?php echo $product['TenHH']; ?>"
+                    data-image="<?php echo $product['Anh1']; ?>"
+                    data-price="<?php echo $product['Gia']; ?>">
                 Add to Cart 
             </button>
-            <button type="button" class="btn float-right">
-                Buy Now 
+            <button type="button" class="btn float-right" onclick="redirectToPayPage('<?php echo $product['idHH']; ?>', '<?php echo $product['TenHH']; ?>', '<?php echo $product['Anh1']; ?>', '<?php echo $product['Gia']; ?>')">
+                Buy Now
             </button>
         </div>
     </div>
@@ -585,18 +598,8 @@ button.btn {
     <!--end mainheader -->
     
 </div>
-<div id="footer">
-                <div class="socials-list">
-                    <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-snapchat" style="color: #616161;"></i></a>
-                    <a href=""><i class="fa-brands fa-pinterest-p"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-
-                </div>
-                <p class="coppy">Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
-            </div>
+<?php require "./include/footer.php";?>
+<?php require "./include/card.php";?>
     <!--end main -->
 </body>
 </html>
@@ -702,23 +705,25 @@ function load_rating_data(products){
     // Lấy tất cả các thẻ <a> chứa idHH và duyệt qua từng sản phẩm
     $(products).each(function(){
         var productId = $(this).find('a[href*="product.php?idHH="]').attr('href').split('idHH=')[1];
+        var container = $(this); // Lưu lại đối tượng jQuery của container này
+
         $.ajax({
             url:"submit_rating.php",
             method:"POST",
             data:{
                 action:'load_data',
-                idHH: productId  // Sử dụng productId lấy được từ href của mỗi sản phẩm
+                idHH: productId
             },
             dataType:"JSON",
             success:function(data){
-                console.log(data); // Hiển thị productId và data trong console
+                console.log(data);
 
                 // Cập nhật thông tin số đánh giá và số sao trung bình
-                $('#total_review_' + productId).text(data.total_review);
+                container.find('#total_review_' + productId).text(data.total_review);
 
                 // Cập nhật trạng thái sao
                 var count_star = 0;
-                $(this).find('.main_star_' + productId).each(function(){
+                container.find('.main_star_' + productId).each(function(){
                     count_star++;
                     if (count_star <= Math.floor(data.average_rating)) {
                         $(this).addClass('text-warning');
@@ -732,14 +737,12 @@ function load_rating_data(products){
                         $(this).addClass('star-light');
                     }
                 });
-
-                // Cập nhật các đánh giá
-            }.bind(this)
+            }
         });
     });
 }
 
-load_rating_data('.v .card-news');  // Xử lý cho recommendedProducts
-load_rating_data('.b .card-news');  // Xử lý cho filteredProducts
+load_rating_data('.v .card-news');  
+load_rating_data('.b .card-news');
 
 </script>

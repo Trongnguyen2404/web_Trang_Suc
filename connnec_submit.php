@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ':user_name'    =>  $user_name,
             ':email'        =>  $email,
             ':user_review'  =>  $user_review,
-            ':datetime'     =>  time()
+            ':datetime'     =>  date('Y-m-d H:i:s') // Chuyển đổi timestamp thành ngày giờ chuẩn của MySQL
         );
 
         $query = "

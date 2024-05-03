@@ -43,11 +43,22 @@
   
       return $stmt->execute();
   }
-  function xoaTheLoai($idHH){
-    $sql = "DELETE FROM hanghoa WHERE idHH=$idHH";
+function xoaTheLoai($idHH){
     global $conn;
-    $kq = $conn->exec($sql);
-  }
+    
+    // Xóa các đánh giá liên quan đến hàng hóa
+    $sqlDeleteReviews = "DELETE FROM review_table WHERE idHH = :idHH";
+    $stmtDeleteReviews = $conn->prepare($sqlDeleteReviews);
+    $stmtDeleteReviews->bindParam(':idHH', $idHH, PDO::PARAM_INT);
+    $stmtDeleteReviews->execute();
+    
+    // Sau đó mới xóa hàng hóa
+    $sqlDeleteHangHoa = "DELETE FROM hanghoa WHERE idHH=:idHH";
+    $stmtDeleteHangHoa = $conn->prepare($sqlDeleteHangHoa);
+    $stmtDeleteHangHoa->bindParam(':idHH', $idHH, PDO::PARAM_INT);
+    $stmtDeleteHangHoa->execute();
+}
+
   function layChiTietTheLoai($idHH){
     $sql="SELECT idHH, TenHH, Gia, SoLuong, AnHien, LoaiHH, Anh1, Anh2, Anh3, Anh4, NoiDung, DonDoi, ChatLieu, DeXuat FROM hanghoa WHERE idHH=:idHH ";
     

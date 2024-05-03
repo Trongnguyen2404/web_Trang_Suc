@@ -1,5 +1,5 @@
 <?php
-require "./functions.php";
+require "./functions_product.php";
 require "./include/header.php";
 $idHH = $_GET['idHH'] ?? ""; // Lấy idHH từ URL, nếu không có thì mặc định là chuỗi rỗng
 
@@ -14,6 +14,7 @@ if (!$productDetail) {
 $materialName = getMaterialName($productDetail['ChatLieu']);
 $typeName = getTypeName($productDetail['LoaiHH']);
 $doubleType = getDoubleType($productDetail['DonDoi']);
+$link=getLinkName($productDetail['LoaiHH']);
 ?>
 <style>
   body{
@@ -348,7 +349,7 @@ $doubleType = getDoubleType($productDetail['DonDoi']);
         <!-- card right -->
         <div class="product-content">
             <h2 class="product-title"><?php echo $productDetail['TenHH']; ?></h2>
-            <a href="#" class="product-link">Visit <?php echo $typeName; ?> store</a>
+            <a href="<?php echo $link; ?>" class="product-link">Visit <?php echo $typeName; ?> store</a>
             <div class="product-rating">
                 <!-- ... -->
             </div>
@@ -373,11 +374,17 @@ $doubleType = getDoubleType($productDetail['DonDoi']);
             </div>
 
             <div class="purchase-info">
-                <input type="number" min="0" value="1">
-                <button type="button" class="btn">
-                Add to Cart <i class="fas fa-shopping-cart"></i>
-                </button>
-                <button type="button" class="btn">Buy</button>
+                <input  type="number" min="1" value="1">
+                <button type="button" class="btn addcard" 
+                    data-idHH="<?php echo $productDetail['idHH']; ?>"
+                    data-name="<?php echo $productDetail['TenHH']; ?>"
+                    data-image="<?php echo $productDetail['Anh1']; ?>"
+                    data-price="<?php echo $productDetail['Gia']; ?>">
+                    Add to Cart <i class="fas fa-shopping-cart"></i>
+            </button>
+                <button type="button" class="btn" onclick="redirectToPayPage('<?php echo $productDetail['idHH']; ?>', '<?php echo $productDetail['TenHH']; ?>', '<?php echo $productDetail['Anh1']; ?>', '<?php echo $productDetail['Gia']; ?>')">
+                Buy Now
+            </button>
             </div>
         </div>
       </div>
@@ -388,6 +395,7 @@ $doubleType = getDoubleType($productDetail['DonDoi']);
   </div>
   <div class="rating">
 <?php require "./rating.php"; ?>
+<?php require "./include/card.php";?>
   </div>
   <div id="footer">
       <div class="socials-list">

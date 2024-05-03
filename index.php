@@ -1,5 +1,99 @@
 <?php require "./include/header.php";
 ?>
+<style>
+     .notifications {
+	position: fixed;
+	top: 30px;
+	right: 20px;
+    z-index: 50;
+}
+.toast{
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    border-radius: 5px;
+    --color: #0abf30;
+    background-image: linear-gradient(to right, #0abf3055, #22242F 30%);
+    animation: show_toast 0.3s ease forwards;
+}
+.toast i{
+    color: var(--color);
+}
+.toast .title{
+    font-size: x-large;
+    font-weight: bold;
+}
+.toast i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+.toast span,
+.toast .close{
+    opacity: 0.6;
+    color: #fff
+}
+
+@keyframes show_toast {
+	0% {
+		transform: translateX(100%);
+	}
+	40% {
+		transform: translateX(-5%);
+	}
+	80% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-10%);
+	}
+}
+.toast::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color);
+    box-shadow: 0 0 10px var(--color);
+    content: '';
+    width: 100%;
+    height: 3px;
+    animation: timeOut 5s linear 1 forwards;
+}
+@keyframes timeOut{
+    to{
+        width: 0%;  
+    }
+}
+/* error */
+.toast.error{
+   --color: #f24d4c;
+   background-image: linear-gradient(to right, #f24d4c55, #22242F 30%);
+}
+.progress-label-left
+{
+    float: left;
+    margin-right: 0.5em;
+    line-height: 1em;
+}
+.progress-label-right
+{
+    float: right;
+    margin-left: 0.3em;
+    line-height: 1em;
+}
+.star-light
+{
+	color:#e9ecef;
+}
+.text-warning {
+    color: #ffc107 !important;
+}
+</style>
         <div class="carousel">
             <!-- list item -->
             <div class="list">
@@ -399,23 +493,16 @@
             <div class="map-section">
                 <img src="./assets/img/map.jpg" alt="">
             </div>
-            <div id="footer">
-                <div class="socials-list">
-                    <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-snapchat" style="color: #616161;"></i></a>
-                    <a href=""><i class="fa-brands fa-pinterest-p"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-
-                </div>
-                <p class="coppy">Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
-            </div>
+            <?php require "./include/footer.php";?>
         </div>
     </div>
     <script>
         AOS.init();
       </script>
+    <?php require "./include/card.php";?>
+    <div class="notifications">
+    <!-- Notification messages will be displayed here -->
+</div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -447,7 +534,7 @@ $(document).ready(function(){
         var user_review = $('.user_review').val();
 
         if(user_name == '' || email == '' || user_review == ''){
-            alert("Vui lòng điền đầy đủ thông tin.");
+            createToast('error', 'fa-solid fa-times-circle', 'Error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
             return false;
         } else {
             $.ajax({
@@ -459,7 +546,6 @@ $(document).ready(function(){
                     user_review: user_review,
                 },
                 success:function(response){
-                    alert("Vui lòng điền đầy đủ thông tin.");
                     createToast('success', 'fa-solid fa-check-circle', 'Success', response);
                     $('#review_form')[0].reset(); // Reset form sau khi gửi thành công
                 },

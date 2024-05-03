@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./aos-master/dist/aos.css">
     <script src="./aos-master/dist/aos.js"></script>
 </head>
-<body>
+<body class="">
     <div id="main">
         <div id="mainheader">
             <div id="header" class="header-zindex-2">
@@ -34,7 +34,20 @@
                </ul>
                <div id="userShop" class="inlineBlock">  
                     <div class="Shopping inlineBlock" >
-                        <img src="./icon_wed/giỏ hàng.png" alt="">
+                        <img src="./icon_wed/giỏ hàng.svg" alt="">
+                        <span class="quantity" style="
+                                background: red;
+                                border-radius: 37%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: #fff;
+                                position: absolute;
+                                top: 8px;
+                                left: 60%;
+                                padding: 0px 4px;
+                                font-size: 8px;
+                            ">0</span>
                     </div>
                     <div class="user inlineBlock" onclick="redirectToLink()" style="cursor: pointer;">
                             <?php
@@ -60,8 +73,27 @@
 
                 <div id="search" class="inlineBlock">
                     <div class="search-container">
-                        <input placeholder="...Search product..." type="search" name="s" title="Tìm kiếm" value="">
+                        <input id="searchInput" placeholder="...Search product..." type="search" name="s" title="Tìm kiếm" value="">
                     </div>
                 </div>
+
+                    <script>
+                        document.getElementById("searchInput").addEventListener("keypress", function(event) {
+                            // Kiểm tra xem phím nhấn là Enter không (mã 13)
+                            if (event.key === "Enter") {
+                                // Lấy giá trị từ ô input
+                                var searchKeyword = this.value;
+                                
+                                // Tạo URL mới với các tham số
+                                var url = "http://localhost/web_Trang_Suc/page.php?page=7&material=all%20materials&type=single%20and%20double&priceRange=All%20price%20ranges&searchKeyword=" + encodeURIComponent(searchKeyword) + "&sortedBuy=newest";
+                                
+                                // Chuyển hướng trình duyệt đến URL mới
+                                window.location.href = url;
+                            }
+                        });
+                    </script>
+
+                
             </div>
         </div>
+        
