@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 03, 2024 lúc 08:46 PM
+-- Thời gian đã tạo: Th5 03, 2024 lúc 09:15 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -89,10 +89,10 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`idcard`, `idUser`, `idHH`, `TenHH`, `SoLuong`, `Gia`, `Anh1`) VALUES
-(61, 27, 35, 'coffee rang', 30, 5000, 'b2.jpg'),
+(61, 27, 35, 'coffee rang', 31, 5000, 'b2.jpg'),
 (62, 27, 38, 'b', 1, 0, 'pd02.png'),
 (63, 27, 37, 'coffee hòa', 1, 300, '04.png'),
-(64, 27, 36, 'coffee hòa tan', 1, 700, 'JULY-about0.jpg');
+(64, 27, 36, 'coffee hòa tan', 12, 700, 'JULY-about0.jpg');
 
 --
 -- Chỉ mục cho các bảng đã đổ

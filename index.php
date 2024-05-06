@@ -165,63 +165,65 @@
             </div>
         
             <!-- thumbnail -->
-            <div class="thumbnail">
-                <!-- thumbnail item 1 -->
-                <div class="item" data-slide="1">
-                    <img src="./icon_wed/01.png">
-                    <div class="content">
-                        <div class="title">
-                            Name Slider
-                        </div>
-                        <div class="description">
-                            Description
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail item 2 -->
-                <div class="item" data-slide="2">
-                    <img src="./icon_wed/02.png">
-                    <div class="content">
-                        <div class="title">
-                            Name Slider
-                        </div>
-                        <div class="description">
-                            Description
+            <div class="arrows-thumbnail">
+                <div class="arrows arrows-next">                <button id="next">></button>  </div>
+
+
+                <div class="thumbnail">
+
+                    <!-- thumbnail item 1 -->
+                    <div class="item" data-slide="1">
+                        <img src="./icon_wed/01.png">
+                        <div class="content">
+                            <div class="title">
+                                Name Slider
+                            </div>
+                            <div class="description">
+                                Description
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- thumbnail item 3 -->
-                <div class="item" data-slide="3">
-                    <img src="./icon_wed/03.png">
-                    <div class="content">
-                        <div class="title">
-                            Name Slider
-                        </div>
-                        <div class="description">
-                            Description
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail item 4 -->
-                <div class="item" data-slide="4">
-                    <img src="./icon_wed/04.png">
-                    <div class="content">
-                        <div class="title">
-                            Name Slider
-                        </div>
-                        <div class="description">
-                            Description
+                    <!-- thumbnail item 2 -->
+                    <div class="item" data-slide="2">
+                        <img src="./icon_wed/02.png">
+                        <div class="content">
+                            <div class="title">
+                                Name Slider
+                            </div>
+                            <div class="description">
+                                Description
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- thumbnail item 3 -->
+                    <div class="item" data-slide="3">
+                        <img src="./icon_wed/03.png">
+                        <div class="content">
+                            <div class="title">
+                                Name Slider
+                            </div>
+                            <div class="description">
+                                Description
+                            </div>
+                        </div>
+                    </div>
+                    <!-- thumbnail item 4 -->
+                    <div class="item" data-slide="4">
+                        <img src="./icon_wed/04.png">
+                        <div class="content">
+                            <div class="title">
+                                Name Slider
+                            </div>
+                            <div class="description">
+                                Description
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>  
+                <div class="arrows arrows-prev">                <button  id="prev"><</button></div>
             </div>
-        
-            <!-- arrows -->
-            <div class="arrows">
-                <button id="prev"><</button>
-                <button id="next">></button>
-            </div>
-        
+
             <!-- time running -->
             <div class="time"></div>
         </div>
@@ -293,146 +295,62 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
                 <script src="./assets/script/app1.js"></script>
             </div>
-            <div id="about" style="
-            position: relative;
-            width: 100%;
-            height: 190vh;
-        ">
-        <div  style="height:100vh; background: url(./icon_wed/background-1.png); background-repeat: no-repeat !important;
-                background-attachment: fixed !important;
-                background-position: center !important;
-                background-size: cover;
-                -webkit-background-size: cover !important;">
-                <div class="me aos-init aos-animate" style="
-                        position: absolute;
-                        top: 30px;
-                        font-family: 'Bebas Neue';
-                        font-size: 100px;
-                        text-align: center;
-                        width: 100%;
-                        color: black;
-                    " data-aos="fade-up" data-aos-duration="500">
-                    JULY JEWELRY
+            <div id="about" >
+
+            <div class="backroutext" >
+                <div class="auto">
+                    <div class="me aos-init aos-animate introduce"  data-aos="fade-up" data-aos-duration="500">
+                        JULY JEWELRY
+                    </div>
+                <div>
+                    <div class="img1" 
+                    data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                                <img src="./icon_wed/JULY-about0.jpg" alt="" style="
+                                width: 100%;
+                                height: 100%;
+                            ">
+                    </div>
+                    <div class="text1"
+                    data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                        <div class="text-1" >   Welcome to July Jewelry</div>
+                            <div class="text-2" data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+                            </div>
+                    </div>
                 </div>
-            <div>
-                <div style="
-                            top: 40vh;
-                            left: 275px;
-                            position: absolute;
-                            width: 270px;
-                        " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                <div>
+                    <div class="img2" 
+                    data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
                             <img src="./icon_wed/JULY-about0.jpg" alt="" style="
                             width: 100%;
                             height: 100%;
                         ">
-                </div>
-                <div style="
-                        color: black;
-                        font-size: 20px;
-                        font-family: math;
-                        font-weight: 600;
-                        position: absolute;
-                        top: 40vh;
-                        left: 610px;
-                        width: 760px;
-                        " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
-                    <div style="
-                    font-size: 25px;
-                    padding-bottom: 10px;
-                    ">   Welcome to July Jewelry</div>
-                        <div style="
-                            font-size: 22px;
-                            text-align: justify;
-                    " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+                    </div>
+                    <div class="text2"
+                    data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                        <div class="text-1" >   Welcome to July Jewelry</div>
+                        <div class="text-2"  data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
                         </div>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div style="
-                        top: 90vh;
-                        left: 1099px;
-                        position: absolute;
-                        width: 270px;
-                    " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                    <div class="img3" 
+                    data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
                         <img src="./icon_wed/JULY-about0.jpg" alt="" style="
                         width: 100%;
                         height: 100%;
                     ">
-                </div>
-                <div style="
-                    color: black;
-                    font-size: 20px;
-                    font-family: math;
-                    font-weight: 600;
-                    position: absolute;
-                    top: 90vh;
-                    left: 274px;
-                    width: 760px;
-                " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
-                    <div style="
-                    font-size: 25px;
-                    padding-bottom: 10px;
-                    ">   Welcome to July Jewelry</div>
-                    <div style="
-                        font-size: 22px;
-                        text-align: justify;
-                " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+                    </div>
+                    <div class="text3" 
+                    data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
+                        <div class="text-1" >   Welcome to July Jewelry</div>
+                        <div class="text-2"  data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
+                        </div>
+                    </div>
+                    <div class="text4" data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate" >
+                            Join us in exploring the beauty and power of jewelry at July Jewelry. We are not just a brand, but also a companion in every journey towards style and personalization. Let us accompany you as you discover the perfect expression of your individuality through our stunning pieces. With July Jewelry, every moment becomes an opportunity to shine and to celebrate your unique essence.
                     </div>
                 </div>
             </div>
-        </div>
-        <div style="height:100vh; background: url(./icon_wed/background-1.png); background-repeat: no-repeat !important;
-        background-attachment: fixed !important;
-        background-position: center !important;
-        background-size: cover;
-        -webkit-background-size: cover !important;">
-                <div style="
-                    top: 140vh;
-                    left: 275px;
-                    position: absolute;
-                    width: 270px;
-                " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
-                    <img src="./icon_wed/JULY-about0.jpg" alt="" style="
-                    width: 100%;
-                    height: 100%;
-                ">
-                </div>
-                <div style="
-                        color: black;
-                        font-size: 20px;
-                        font-family: math;
-                        font-weight: 600;
-                        position: absolute;
-                        top: 140vh;
-                        left: 610px;
-                        width: 760px;
-                    " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
-                    <div style="
-                    font-size: 25px;
-                    padding-bottom: 10px;
-                    ">   Welcome to July Jewelry</div>
-                    <div style="
-                        font-size: 22px;
-                        text-align: justify;
-                        " data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
-                    </div>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate" style="
-                        color: black;
-                        font-size: 21px;
-                        font-family: math;
-                        font-weight: 600;
-                        position: absolute;
-                        top: 180vh;
-                        width: 80vw;
-                        margin: auto;
-                        left: 0;
-                        right: 0;
-                        text-align: center;
-                        ">
-                        Join us in exploring the beauty and power of jewelry at July Jewelry. We are not just a brand, but also a companion in every journey towards style and personalization. Let us accompany you as you discover the perfect expression of your individuality through our stunning pieces. With July Jewelry, every moment becomes an opportunity to shine and to celebrate your unique essence.
-                </div>
-            </div>
+        
     </div>
             
             <!-- Tour -->
@@ -510,20 +428,27 @@
 
 <script>
 let notifications = document.querySelector('.notifications');
+let canShowToast = true; // Biến để kiểm tra xem có thể hiển thị thông báo mới hay không
 
 function createToast(type, icon, title, text){
-    let newToast = document.createElement('div');
-    newToast.innerHTML = `
-        <div class="toast ${type}">
-            <i class="${icon}"></i>
-            <div class="content">
-                <div class="title">${title}</div>
-                <span>${text}</span>
-            </div>
-            <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
-        </div>`;
-    notifications.appendChild(newToast);
-    newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+    if (canShowToast) { // Kiểm tra trạng thái hiển thị của thông báo
+        let newToast = document.createElement('div');
+        newToast.innerHTML = `
+            <div class="toast ${type}">
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>
+                </div>
+                <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove(); canShowToast = true;"></i>
+            </div>`;
+        notifications.appendChild(newToast);
+        newToast.timeOut = setTimeout(() => {
+            newToast.remove();
+            canShowToast = true; // Thiết lập lại biến sau khi thông báo biến mất
+        }, 5000);
+        canShowToast = false; // Đặt biến để ngăn không hiển thị thông báo mới
+    }
 }
 
 $(document).ready(function(){

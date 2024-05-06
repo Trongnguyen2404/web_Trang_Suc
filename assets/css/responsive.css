@@ -1,0 +1,87 @@
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+@media (max-width: 1500px) {
+    .carousel {
+        height: 101vh;
+        margin-top: -7px;
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+    }
+    
+}
+@media (max-width: 1480px) {
+    #nav li a {
+        font-size: 13px;
+        text-decoration: none;
+        font-weight: 500;
+        line-height: 50px;
+        display: block;
+        padding: 0 5px;
+    }
+}
+@media (max-width: 1400px) {
+
+    
+}
+@media (max-width: 1330px) {
+    #nav li a {
+        font-size: 13px;
+        text-decoration: none;
+        font-weight: 500;
+        line-height: 50px;
+        display: block;
+    }
+    #nav li {
+        position: relative;
+        margin: 0 20px;
+    }
+
+}
+@media (max-width: 1240px) {
+    #nav li a {
+        font-size: 13px;
+        text-decoration: none;
+        font-weight: 500;
+        line-height: 50px;
+        display: block;
+    }
+    #nav li {
+        position: relative;
+        margin: 0 20px;
+    }
+}
+@media (max-width: 1100px) {
+    #nav li a {
+        font-size: 13px;
+        text-decoration: none;
+        font-weight: 500;
+        line-height: 50px;
+        display: block;
+    }
+    #nav li {
+        position: relative;
+        margin: 0 20px;
+    }
+
+}
+@media (max-width: 1000px) {
+    #nav li a {
+        font-size: 13px;
+        text-decoration: none;
+        font-weight: 500;
+        line-height: 50px;
+        display: block;
+    }
+    #nav li {
+        position: relative;
+        margin: 0 20px;
+    }
+
+}

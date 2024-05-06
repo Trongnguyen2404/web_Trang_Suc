@@ -11,18 +11,21 @@
     <link rel="stylesheet" href="./assets/fontawesome-free-6.2.1-web/css/all.css">
     <link rel="stylesheet" href="./aos-master/dist/aos.css">
     <script src="./aos-master/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body class="">
     <div id="main">
         <div id="mainheader">
+        
             <div id="header" class="header-zindex-2">
                 <!-- begin nav -->
-                <img src="./icon_wed/JULY.png" alt="" style="
-                        position: absolute;
-                        width: 180px;
-                        height: 90px;
-                        filter: drop-shadow(2px 1px 2px black);
-                    ">
+                <a href="./page.php?page=0">
+                    <img class="img-web" src="./icon_wed/JULY.png" alt="July">
+                </a>
+                    <label for="menu-toggle" class="menu-icon">&#9776;</label>
                <ul id="nav">
                 <li><a href="./page.php?page=0">HOME</a></li>
                 <li><a href="./page.php?page=1">RINGS</a></li>
@@ -35,19 +38,7 @@
                <div id="userShop" class="inlineBlock">  
                     <div class="Shopping inlineBlock" >
                         <img src="./icon_wed/giỏ hàng.svg" alt="">
-                        <span class="quantity" style="
-                                background: red;
-                                border-radius: 37%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                color: #fff;
-                                position: absolute;
-                                top: 8px;
-                                left: 60%;
-                                padding: 0px 4px;
-                                font-size: 8px;
-                            ">0</span>
+                        <span class="quantity" >0</span>
                     </div>
                     <div class="user inlineBlock" onclick="redirectToLink()" style="cursor: pointer;">
                             <?php

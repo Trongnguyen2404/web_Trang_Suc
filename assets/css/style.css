@@ -6,10 +6,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.inlineBlock
-{
-    display: inline-block;
-}
+
 html {
 /*hành vi khi cuộn*/
     font-family: Arial, Helvetica, sans-serif;
@@ -66,168 +63,8 @@ html {
 #mainheader{
 
 }
-    #nav > li {
-        display: inline-block;
-    }
+ 
 
-#nav {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    display: inline-block;
-}
-#nav li > a:before {
-    height: 1px;
-    bottom: 10px;
-    content: '';
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    background: red ;
-    transition: .3s linear;
-}
-
-#nav li:hover > a:before {
-    left: 0;
-    right: 0; /* Di chuyển thanh ngang về bên trái */
-    transform-origin: left;
-}
-#nav li {
-    position: relative;
-    margin: 0 40px;
-}
-
-#nav > li > a{     /*thuộc tính chỉ ảnh hưởng cấp 1 ko ảnh hưởng đến cấp 2 (ở more)*/
-    color: #000000;
-    text-transform: uppercase; /*viết hoa */
-}
-
-#nav li a{
-    font-size: 13px;
-    text-decoration: none;
-    font-weight: 500;
-    line-height: 50px;
-    display: block;
-    padding: 0 15px;
-}
-
-#nav>li:hover>a {
-    color: #c60018;
-}
-#header{
-    --height: 90px;
-    height: var(--height);
-    backdrop-filter: blur(5px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    margin: auto;
-    max-width: 100%;
-}
-#search {
-    left: 0;
-    position: absolute;
-    /* max-width: 988px; */
-    margin: 2px 0px 0px;
-    right: 0;
-    text-align: center;
-}
-
-.search-container {
-    margin: 0 45px 0 45px;
-    position: relative;
-}
-
-#search input {
-    text-align: center;
-    background: #00000000;
-    width:700px; /* Adjust the width to leave space for the icon */
-    height: 100%;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #000000;
-    padding: 7px 25px;
-    font-size: 16px;
-    font-weight: 300;
-}
-::placeholder { 
-    color: rgb(3, 3, 3);     /* Firefox, Chrome, Opera */
-}
-
-  
-#userShop
-{
-    z-index: 51;
-    position: absolute;
-    right: 10px;
-    top: 1px;
-}
-#userShop .user
-{
-    margin-top: 15px;
-    font-size: 18px;
-    /* font-weight: 500; */
-    color: black;
-    border-radius: 5px;
-    padding: 6px 12px 6px 12px;
-    border: 1px solid;
-}
-
-#userShop a
-{
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-}    
-#userShop .Shopping
-{
-    position: relative;
-    top: 10px;
-    padding: 10px 15px 10px 10px;
-    color: black;
-    text-decoration: none;
-}
-#userShop .Shopping img
-{
-    width: 30px;
-    height: 30px;
-}
-  /* Thêm hiệu ứng khi chuyển đổi các slide */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 2s;
-    animation-name: fade;
-    animation-duration: 2s;
-  }
-   
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-   
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-
-@media (max-width: 1500px) {
-    #userShop .user {
-        font-size: 17px;
-        width: 100px;
-        border-radius: 5px;
-        border: 1px solid;
-    }
-    .carousel {
-        height: 101vh;
-        margin-top: -7px;
-        width: 100vw;
-        overflow: hidden;
-        position: relative;
-    }
-}
 #content{
 
 }
@@ -547,3 +384,407 @@ ul.listCard {
     margin: 0 10px;
 }
 
+.footer .container {
+    max-width: 1170px;
+    margin: 0;
+    display: inline-block;
+}
+.footer .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer {
+    position: relative;
+    background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+   margin-left: 60px;
+text-align: center;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 280px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li{
+    color: white;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+    text-align: left;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer h2 {
+    color: #333;
+    font-size: 25px;
+    margin-left: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.footer p{
+    color: black;
+    font-size: 15px;
+    text-align: justify;
+    margin: 20px 40px 20px 40px;
+}
+.footer h3{
+    color: #000;
+    font-size: 20px;
+    margin-left: 40px;
+}
+.footer h5{color: black;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.footer form#review_form1 {
+    width: 550px;
+    display: grid;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 130px;
+    
+}
+.footer input {
+    background: #ffffff36;
+    outline: none;
+}
+button#save_review1 {
+    cursor: pointer;
+}
+.introduce{
+    position: absolute;
+    top: 30px;
+    font-family: 'Bebas Neue';
+    font-size: 100px;
+    text-align: center;
+    width: 100%;
+    color: black;
+}
+#about{
+    position: relative;
+    width: 100%;
+    height: 220vh;
+}
+.backroutext{
+    height: 100%;
+    background: url(./background-1.png); background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-size: cover;
+    -webkit-background-size: cover !important;
+}
+.auto {
+    position: absolute;
+    max-width: 1240px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+.img1{
+    top: 40vh;
+    position: absolute;
+    width: 270px;
+    left: 30px;
+}
+.text1{
+    color: black;
+    font-size: 20px;
+    font-family: math;
+    font-weight: 600;
+    position: absolute;
+    top: 40vh;
+    left: 350px;
+    padding: 0 20px 0 0;
+}
+.text1 .text-1{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.text1 .text-2{
+    font-size: 22px;
+    text-align: justify;
+}
+.img2{
+    top: 90vh;
+    right: 0;
+    position: absolute;
+    width: 270px;
+    padding: 0 20px 0 0;
+}
+.text2{
+    color: black;
+    font-size: 20px;
+    font-family: math;
+    font-weight: 600;
+    position: absolute;
+    top: 90vh;
+    right: 350px;
+    left: 30px;
+}
+.text2 .text-1{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.text2 .text-2{
+    font-size: 22px;
+    text-align: justify;
+    
+}
+.img3{
+    top: 140vh;
+    position: absolute;
+    width: 270px;
+    left: 30px;
+}
+.text3{
+    color: black;
+    font-size: 20px;
+    font-family: math;
+    font-weight: 600;
+    position: absolute;
+    top: 140vh;
+    left: 350px;
+    padding: 0 20px 0 0;
+}
+.text3 .text-1{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.text3 .text-2{
+    font-size: 22px;
+    text-align: justify;
+}
+.text4{
+    color: black;
+    font-size: 21px;
+    font-family: math;
+    font-weight: 600;
+    position: absolute;
+    width: 80vw;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 150px;
+}
+#header{
+    --height: 90px;
+    height: var(--height);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    margin: auto;
+    max-width: 100%;
+}
+#header .img-web{
+    position: absolute;
+    width: 180px;
+    height: 90px;
+    filter: drop-shadow(2px 1px 2px black);
+    z-index: 50;
+}
+#search {
+    left: 0;
+    position: absolute;
+    /* max-width: 988px; */
+    margin: 2px 0px 0px;
+    right: 0;
+    text-align: center;
+}
+
+.search-container {
+    margin: 0 45px 0 45px;
+    position: relative;
+}
+
+#search input {
+    text-align: center;
+    background: #00000000;
+    width:700px; /* Adjust the width to leave space for the icon */
+    height: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000000;
+    padding: 7px 25px;
+    font-size: 16px;
+    font-weight: 300;
+}
+::placeholder { 
+    color: rgb(3, 3, 3);     /* Firefox, Chrome, Opera */
+}
+
+  
+#userShop
+{
+    z-index: 51;
+    position: absolute;
+    right: 10px;
+    top: 1px;
+}
+#userShop .user
+{
+    margin-top: 15px;
+    font-size: 18px;
+    /* font-weight: 500; */
+    color: black;
+    border-radius: 5px;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid;
+}
+
+#userShop a
+{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}    
+#userShop .Shopping
+{
+    position: relative;
+    top: 10px;
+    padding: 10px 15px 10px 10px;
+    color: black;
+    text-decoration: none;
+}
+#userShop .Shopping img
+{
+    width: 30px;
+    height: 30px;
+}
+  /* Thêm hiệu ứng khi chuyển đổi các slide */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+   
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+   
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+@media (max-width: 1500px) {
+    #userShop .user {
+        font-size: 17px;
+        width: 100px;
+        border-radius: 5px;
+        border: 1px solid;
+    }
+    .carousel {
+        height: 101vh;
+        margin-top: -7px;
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+    }
+}
+#nav > li {
+    display: inline-block;
+}
+
+#nav {
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+text-align: center;
+display: inline-block;
+}
+#nav li > a:before {
+height: 1px;
+bottom: 10px;
+content: '';
+position: absolute;
+left: 50%;
+right: 50%;
+background: red ;
+transition: .3s linear;
+}
+
+#nav li:hover > a:before {
+left: 0;
+right: 0; /* Di chuyển thanh ngang về bên trái */
+transform-origin: left;
+}
+#nav li {
+position: relative;
+margin: 0 40px;
+}
+
+#nav > li > a{     /*thuộc tính chỉ ảnh hưởng cấp 1 ko ảnh hưởng đến cấp 2 (ở more)*/
+color: #000000;
+text-transform: uppercase; /*viết hoa */
+}
+
+#nav li a{
+font-size: 13px;
+text-decoration: none;
+font-weight: 500;
+line-height: 50px;
+display: block;
+padding: 0 15px;
+}
+
+#nav>li:hover>a {
+color: #c60018;
+}
+.inlineBlock
+{
+    display: inline-block;
+}
+.quantity
+{
+    background: red;
+    border-radius: 37%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 8px;
+    left: 60%;
+    padding: 0px 4px;
+    font-size: 8px;
+}

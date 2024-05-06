@@ -614,15 +614,20 @@ signInForm.addEventListener("submit", function(event) {
     xhr.open('POST', 'xulylogin.php', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                const response = xhr.responseText;
-                notifications.innerHTML = response; // Hiển thị thông báo từ máy chủ
-                if (!response.trim()) { // Kiểm tra nếu không có thông báo từ máy chủ
+           if (xhr.status === 200) {
+            const response = xhr.responseText;
+            notifications.innerHTML = response; // Hiển thị thông báo từ máy chủ
+            if (!response.trim()) { // Kiểm tra nếu không có thông báo từ máy chủ
                     window.location.href = "index.php"; // Chuyển hướng đến trang chính
                 }
-            } else {
-                console.error('Error:', xhr.status);
-            }
+            // Tự động xóa thông báo sau 5 giây
+            setTimeout(() => {
+                notifications.innerHTML = '';
+            }, 5000);
+        } else {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "An error occurred while changing password.");
+            console.error('Error:', xhr.status);
+        }
         }
     };
     xhr.send(formData);

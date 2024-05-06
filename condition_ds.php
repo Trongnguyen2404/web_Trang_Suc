@@ -125,4 +125,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Gọi hàm cập nhật thông tin người nhận
     updateRecipientInfo($idOder, $name, $address, $email, $phoneNumber);
 }
+// Hàm hiển thị toàn bộ thông tin từ bảng productoder
+
 ?>

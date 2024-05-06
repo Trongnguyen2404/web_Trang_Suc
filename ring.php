@@ -109,6 +109,7 @@ $recommendedProducts1 = getRecommendedProductsByPage1($page);
     min-height: 55px;
     line-height: 1.3;
 }
+
 button.btn.float-right {
     float: right;
     border-bottom-right-radius: 15px;
@@ -147,10 +148,10 @@ button.btn {
 /* Thêm định dạng thẻ cho bài viết */
 .card-news 
 {
-    width: 23%;
+    width: 22%;
     background-color: #0000000;
     margin: 9px calc(4%/4);
-    float: left;
+    display: inline-block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
     -webkit-box-pack: justify;

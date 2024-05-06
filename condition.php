@@ -73,8 +73,9 @@ ul.listCard0 {
     /* margin: 50px 0 0 0; */
     max-width: 800px;
     max-height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: inline-block;
+    padding: 10px;
 }
 .listCard0 li {
     display: grid;
