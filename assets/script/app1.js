@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 containerAnimation: scrollTween,
                 trigger: el.querySelector('.caption'),
                 start: 'top bottom',
-                end: '+=1000',
-                scrub: 0.5,
+                end: '+=100vw',
+                scrub: 5,
             }
         });
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 containerAnimation: scrollTween,
                 trigger: el.querySelector('.block'),
                 start: 'top bottom',
-                end: '+=' + window.innerWidth,
+                end: '+=100%',
                 scrub: 0.5,
             }
         });

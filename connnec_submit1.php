@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Kiểm tra và validate dữ liệu
     if (empty($user_name) || empty($email) || empty($user_review)) {
-        echo "Vui lòng điền đầy đủ thông tin.";
+        echo "Please complete all information.";
         exit();
     }
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statement = $connect->prepare($query);
         $statement->execute($data);
 
-        echo "Đánh giá của bạn đã được gửi thành công";
+        echo "Your review has been submitted successfully.";
     } catch(PDOException $e) {
         echo "Lỗi: " . $e->getMessage();
     }

@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
    <label>Password</label> <input name="p" type="password" class="form-control"/>
-   <a href="quenpass.php" style="float: right;">Forgot password?</a>
+   <a href="Forgotpassword.php" style="float: right;">Forgot password?</a>
 </div> 
 <div class="form-group">
     <input name="btn" type="submit" value="Đăng nhập" class="btn btn-primary"/> 

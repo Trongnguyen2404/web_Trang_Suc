@@ -213,6 +213,15 @@ $u = $_SESSION['login_user'];//username dang dang nhap
 {
 	color:#e9ecef;
 }
+@media (max-width: 1240px) {
+    .h3, h3 {
+    font-size: 0.75rem;
+    }
+}
+.col-sm-11 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
 </style>
 
 <script>
@@ -289,7 +298,7 @@ $(document).ready(function(){
     var user_review = $('#user_review').val();
 
     if(rating_data == 0){  // Kiểm tra xem người dùng đã chọn số sao hay chưa
-        alert("Vui lòng chọn số sao để đánh giá sản phẩm.");
+        alert("Please select the number of stars to rate the product.");
         return false;
     }
 
@@ -363,7 +372,6 @@ $(document).ready(function(){
                     var html = '';
                     for(var count = 0; count < data.review_data.length; count++){
                         html += '<div class="row mb-3">';
-                        html += '<div class="col-sm-1"><div class="rounded-circle bg-danger text-white pt-2 pb-2"><h3 class="text-center">'+data.review_data[count].user_name.charAt(0)+'</h3></div></div>';
                         html += '<div class="col-sm-11">';
                         html += '<div class="card">';
                         html += '<div class="card-header"><b>'+data.review_data[count].user_name+'</b></div>';

@@ -2,33 +2,33 @@
 require "./functions.php";
 switch ($page) {
   case 1:
-      $title = "High quality bracelets";
-      $description = "Show off your charm with beautiful, high-end, charming LiLi bracelets. Are you ready to shine and attract all eyes with her?";
+      $title = "High quality rings bracelets";
+      $description = "Show off your charm with beautiful, high-end, charming LiLi bracelets. Are you ready to shine and attract all eyes with her?Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
       $headerTitle = "RINGS";
       break;
   case 2:
-      $title = "High quality necklaces";
-      $description = "Show off your charm with beautiful, high-end, charming LiLi necklaces. Are you ready to shine and attract all eyes with her?";
+      $title = "High quality bracelets necklaces";
+      $description = "Show off your charm with beautiful, high-end, charming LiLi necklaces. Are you ready to shine and attract all eyes with her?Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
       $headerTitle = "BRACELETS";
       break;
   case 3:
-      $title = "High quality hairpins";
-      $description = "Show off your charm with beautiful, high-end, charming LiLi hairpins. Are you ready to shine and attract all eyes with her?";
+      $title = "High quality necklaces hairpins";
+      $description = "Show off your charm with beautiful, high-end, charming LiLi hairpins. Are you ready to shine and attract all eyes with her?Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
       $headerTitle = "NECKLACES";
       break;
   case 4:
       $title = "High quality anklets";
-      $description = "Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
+      $description = "Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
       $headerTitle = "HAIRPINS";
       break;
   case 5:
       $title = "High quality earrings";
-      $description = "Show off your charm with beautiful, high-end, charming LiLi earrings. Are you ready to shine and attract all eyes with her?";
+      $description = "Show off your charm with beautiful, high-end, charming LiLi earrings. Are you ready to shine and attract all eyes with her?Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
       $headerTitle = "ANKLETS";
       break;
   case 6:
       $title = "High quality rings";
-      $description = "Show off your charm with beautiful, high-end, charming LiLi rings. Are you ready to shine and attract all eyes with her?";
+      $description = "Show off your charm with beautiful, high-end, charming LiLi rings. Are you ready to shine and attract all eyes with her?Show off your charm with beautiful, high-end, charming LiLi anklets. Are you ready to shine and attract all eyes with her?";
       $headerTitle = "EARRINGS";
       break;
 }
@@ -53,27 +53,13 @@ $recommendedProducts1 = getRecommendedProductsByPage1($page);
   --white: #ffffff;
   --shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-    .carousel {
-    height: 70vh;
+    .carousel1 {
+    height: 80vh;
     margin-top: 90px;
     width: 100%;
     overflow: hidden;
     position: relative;
     }
-    #header {
-    --height: 90px;
-    height: var(--height);
-    backdrop-filter: blur(5px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    margin: auto;
-    max-width: 100%;
-    background: white;
-    backdrop-filter: none;
-}
 .line1 {
     background-color: black;
     height: 0.5px;
@@ -106,7 +92,7 @@ $recommendedProducts1 = getRecommendedProductsByPage1($page);
     padding: 5px 10px 0px 10px;
     font-size: 15px;
     font-weight: 600;
-    min-height: 55px;
+    min-height: 80px;
     line-height: 1.3;
 }
 
@@ -149,7 +135,6 @@ button.btn {
 .card-news 
 {
     width: 22%;
-    background-color: #0000000;
     margin: 9px calc(4%/4);
     display: inline-block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -205,7 +190,7 @@ button.btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   background-color: transparent;
   padding: 1rem 1.5rem;
@@ -282,7 +267,7 @@ button.btn {
 }
 .dropdown3 {
     position: absolute;
-    width: 255px;
+    width: 215px;
     border-radius: 50px;
     background-color: var(--white);
     border: 1px solid var(--white);
@@ -292,6 +277,7 @@ button.btn {
     top: 136px;
     color: black;
     z-index: 1;
+    margin: 0 10px !important;
 }
 
 .dropdown-text3 {
@@ -318,7 +304,10 @@ button.btn {
   transition: max-height 0.5s;
   box-shadow: 0px 0px 5px #5b5b5b;
 }
-
+#header {
+    background: white;
+    backdrop-filter: none;
+}
 .dropdown-list3-item {
   font-size: 0.9rem;
   font-weight: 500;
@@ -340,52 +329,88 @@ button.btn {
 #list3.show {
     max-height: 500px;
 }
+.carousel1 .background {
+    background: url(./icon_wed/01.jpg);
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover;
+    -webkit-background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-size: 100% 80vh !important;
+}
+.carousel1 .text-carousel1 {
+    color: black;
+    font-size: 30px;
+    width: 50%;
+    font-family: 'Poppins';
+    height: 80%;
+    bottom: 0;
+    position: relative;
+    margin-top: auto;
+    left: 4%;
+}
+.carousel1 .text-carousel1 .text-carousel1-1 {
+    padding: 30px;
+    text-align: center;
+    margin: auto;
+    font-weight: 600;
+    max-width: 100%;
+}
+.carousel1 .text-carousel1 .text-carousel1-2{
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    max-width: 100%;
+    font-weight: 400;
+}
+.recommended-12{
+    position: absolute;
+    top: 40px;
+    font-size: 32px;
+    left: 0;
+    font-weight: 500;
+    right: 0;
+    margin: auto;
+    width: 42%;
+    color: black;
+    text-align: center;
+}
+.product-ab{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    max-width: 1420px;
+    margin-right: auto;
+}
+.b{
+    min-height: 100vh;
+}
+@media (max-width: 600px) {
+    .toast{
+        width: 300px !important;
+    }
+}
 </style>
 <!-- main -->
     <!-- mainheader -->
-        <div class="carousel" >
-            <div style="background: url(./icon_wed/01.png); background-repeat: no-repeat !important;
-            background-attachment: fixed !important;
-            background-position: center !important;
-            background-size: cover;
-            -webkit-background-size: cover !important; width: 100%;
-            height: 100%;">
+        <div class="carousel1" >
+            <div class="background" >
     
-                <div class="text-carousel" style="
-                    position: absolute;
-                    transform: translate3d(100px, 20%, 0px);
-                    color: black;
-                    font-size: 50px;
-                    width: 50%;
-                    font-family: 'Poppins';
-                    height: 80%;
-                    ">
-                    <div style="
-                        padding: 30px;
-                        text-align: center;
-                        margin: auto;
-                        max-width: 50%;
-                    ">
+                <div class="text-carousel1">
+                    <div class="text-carousel1-1" >
                     <?php echo $title; ?>
                     </div>
-                    <div style="
-                        font-size: 30px;
-                        padding: 20px;
-                        text-align: center;
-                        max-width: 100%;
-                    ">
+                    <div class="text-carousel1-2" >
                     <?php echo $description; ?>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="a" style="
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        margin-left: auto;
-        max-width: 1420px;
-        margin-right: auto;
+        <div class="product-ab" style="
+        
         ">
             <div style="
                 position: relative;
@@ -400,17 +425,8 @@ button.btn {
                     <div class="line2"></div>
                 </div>
                    
-                    <div style="
-                    position: absolute;
-                    top: 40px;
-                    font-size: 32px;
-                    left: 0;
-                    font-weight: 500;
-                    right: 0;
-                    margin: auto;
-                    width: 42%;
-                    color: black;
-                    text-align: center;
+                    <div class="recommended-12" style="
+                   
                 ">RECOMMENDED PRODUCTS
                 </div>
 
@@ -448,14 +464,8 @@ button.btn {
             </div>
 
         </div>
-        <div class="b" style="
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin-left: auto;
-            max-width: 1420px;
-            margin-right: auto;
+        <div class="product-ab b" style="
+           
         ">
             <div style="
                 position: relative;
@@ -470,17 +480,7 @@ button.btn {
                         <div class="line2"></div>
                 </div>
                    
-                <div style="
-                    position: absolute;
-                    top: 40px;
-                    font-size: 32px;
-                    left: 0;
-                    font-weight: 500;
-                    right: 0;
-                    margin: auto;
-                    width: 42%;
-                    color: black;
-                    text-align: center;
+                <div class="recommended-12" style="
                     "><?php echo $headerTitle; ?>
                 </div>
 
@@ -700,6 +700,7 @@ button.btn {
 .text-warning {
     color: #ffc107 !important;
 }
+
 </style>
 <script>
 function load_rating_data(products){

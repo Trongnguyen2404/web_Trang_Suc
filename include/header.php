@@ -26,6 +26,11 @@
                     <img class="img-web" src="./icon_wed/JULY.png" alt="July">
                 </a>
                     <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                    <div id="search" class="inlineBlock">
+                    <div class="search-container">
+                        <input id="searchInput" placeholder="...Search product..." type="search" name="s" title="Tìm kiếm" value="">
+                    </div>
+                </div>
                <ul id="nav">
                 <li><a href="./page.php?page=0">HOME</a></li>
                 <li><a href="./page.php?page=1">RINGS</a></li>
@@ -57,17 +62,25 @@
                             var link = document.querySelector('.user a').getAttribute('href');
                             window.location.href = link;
                         }
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var menuIcon = document.querySelector('.menu-icon');
+                            var searchInput = document.getElementById('searchInput');
+                            var navList = document.getElementById('nav');
+
+                            menuIcon.addEventListener('click', function() {
+                                if (searchInput.classList.contains('inlineBlock')) {
+                                    searchInput.classList.remove('inlineBlock');
+                                    navList.classList.remove('display-grid');
+                                } else {
+                                    searchInput.classList.add('inlineBlock');
+                                    navList.classList.add('display-grid');
+                                }
+                            });
+                        });
                     </script>
                 
                 </div>
                 <!-- end nav -->
-
-                <div id="search" class="inlineBlock">
-                    <div class="search-container">
-                        <input id="searchInput" placeholder="...Search product..." type="search" name="s" title="Tìm kiếm" value="">
-                    </div>
-                </div>
-
                     <script>
                         document.getElementById("searchInput").addEventListener("keypress", function(event) {
                             // Kiểm tra xem phím nhấn là Enter không (mã 13)

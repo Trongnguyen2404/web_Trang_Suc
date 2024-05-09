@@ -140,6 +140,11 @@ button.btn.btn-primary {
 	right: 20px;
     z-index: 50;
 }
+@media (max-width: 600px) {
+    .toast{
+        width: 300px !important;
+    }
+}
 .toast{
     position: relative;
     padding: 10px;
@@ -308,6 +313,31 @@ button.btn.btn-primary {
     opacity: 0.6;
     color: #fff
 }
+.pay-product2{
+    height: 400px;
+                margin: auto;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px ridge #cc8344;
+                border-top: 3px ridge #cc8344;
+                border-left: 3px ridge #cc8344;
+}
+
+.pay-pforment2{
+    display: inline-block;
+                position: absolute;
+                max-width: 400px;
+                min-width: 380px;
+                height: 400px;
+                border: 3px ridge #cc8344;
+                padding: 10px 10px;
+}
+.top-pay-product{
+    top: 210px;
+}
+.top-pay-pforment{
+    top: -3px;
+}
 </style>
 <div class="notifications">
     <!-- Notification messages will be displayed here -->
@@ -329,15 +359,8 @@ if(isset($_GET['idOder'])) {
     if($orderInfo !== false) {
 ?>
 <div class="pay-element">
-    <div style="
-            height: 420px;
-            margin: auto;
-            position: relative;
-            top: 210px;
-            display: inline-block;
-            border-bottom: 3px ridge #cc8344;
-            border-top: 3px ridge #cc8344;
-            border-left: 3px ridge #cc8344;
+    <div class="pay-product2 top-pay-product" style="
+
         ">
         <div style="
             display: inline-block;
@@ -380,15 +403,8 @@ if(isset($_GET['idOder'])) {
                 ">$</div><div class="total0"><?php echo $orderInfo['TotalPrice']; ?></div>
             </div>
         </div>
-        <div style="
-            display: inline-block;
-            position: absolute;
-            top: -3px;
-            max-width: 400px;
-            min-width: 380px;
-            height: 420px;
-            border: 3px ridge #cc8344;
-            padding: 10px 10px;
+        <div class="pay-pforment2 top-pay-pforment" style="
+            
         ">
             <!-- Hiển thị thông tin người nhận -->
             <form action="condition_ds.php" method="post">

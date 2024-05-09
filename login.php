@@ -477,162 +477,170 @@ form.sign-up-form {
         </div>
     </div>
     <script>
-        const sign_in = document.querySelector("#sign-in-btn");
-        const sign_up = document.querySelector("#sign-up-btn");
-        const container = document.querySelector(".container");
+    const sign_in = document.querySelector("#sign-in-btn");
+    const sign_up = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
 
-        sign_up.addEventListener('click', () => {
-            container.classList.add('sign-up-mode');
-        });
+    sign_up.addEventListener('click', () => {
+        container.classList.add('sign-up-mode');
+    });
 
-        sign_in.addEventListener('click', () => {
-            container.classList.remove('sign-up-mode');
-        });
-        let notifications = document.querySelector('.notifications');
-let canShowToast = true; // Biến để kiểm tra xem có thể hiển thị thông báo mới hay không
+    sign_in.addEventListener('click', () => {
+        container.classList.remove('sign-up-mode');
+    });
 
-function createToast(type, icon, title, text){
-    if (canShowToast) { // Kiểm tra trạng thái hiển thị của thông báo
-        let newToast = document.createElement('div');
-        newToast.innerHTML = `
-            <div class="toast ${type}">
-                <i class="${icon}"></i>
-                <div class="content">
-                    <div class="title">${title}</div>
-                    <span>${text}</span>
-                </div>
-                <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove(); canShowToast = true;"></i>
-            </div>`;
-        notifications.appendChild(newToast);
-        newToast.timeOut = setTimeout(() => {
-            newToast.remove();
-            canShowToast = true; // Thiết lập lại biến sau khi thông báo biến mất
-        }, 5000);
-        canShowToast = false; // Đặt biến để ngăn không hiển thị thông báo mới
-    }
-}
-const signUpForm = document.querySelector(".sign-up-form");
-const usernameInput = document.getElementById("username-1");
-const passwordInput = document.getElementById("password-1");
-const confirmPasswordInput = document.querySelector('input[name="repass"]');
-const emailInput = document.querySelector('input[type="email"]');
-const phoneInput = document.querySelector('input[type="tel"]');
+    let notifications = document.querySelector('.notifications');
+    let canShowToast = true; 
 
-signUpForm.addEventListener("submit", function(event) {
-    event.preventDefault(); 
-
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value.trim();
-    const confirmPassword = confirmPasswordInput.value.trim();
-    const email = emailInput.value.trim();
-    const phoneNumber = phoneInput.value.trim();
-
-    let isValid = true;
-
-    if (username.length < 5 || username.length > 16) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Tên người dùng phải có từ 5 đến 16 ký tự.");
-        isValid = false;
+    function createToast(type, icon, title, text){
+        if (canShowToast) { 
+            let newToast = document.createElement('div');
+            newToast.innerHTML = `
+                <div class="toast ${type}">
+                    <i class="${icon}"></i>
+                    <div class="content">
+                        <div class="title">${title}</div>
+                        <span>${text}</span>
+                    </div>
+                    <i class="close fa-solid fa-xmark" onclick="(this.parentElement).remove(); canShowToast = true;"></i>
+                </div>`;
+            notifications.appendChild(newToast);
+            newToast.timeOut = setTimeout(() => {
+                newToast.remove();
+                canShowToast = true; 
+            }, 5000);
+            canShowToast = false; 
+        }
     }
 
-    if (password.length < 5) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Mật khẩu phải có ít nhất 5 ký tự.");
-        isValid = false;
-    }
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{5,}$/;
+    const signUpForm = document.querySelector(".sign-up-form");
+    const usernameInput = document.getElementById("username-1");
+    const passwordInput = document.getElementById("password-1");
+    const confirmPasswordInput = document.querySelector('input[name="repass"]');
+    const emailInput = document.querySelector('input[type="email"]');
+    const phoneInput = document.querySelector('input[type="tel"]');
 
-    if (!passwordRegex.test(password)) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Mật khẩu phải có ít nhất một chữ cái, một chữ cái in hoa, một số và một ký tự đặc biệt.");
-        isValid = false;
-    }
-    if (password !== confirmPassword) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Xác nhận mật khẩu không khớp.");
-        isValid = false;
-    }
+    signUpForm.addEventListener("submit", function(event) {
+        event.preventDefault(); 
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Email không hợp lệ.");
-        isValid = false;
-    }
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        const confirmPassword = confirmPasswordInput.value.trim();
+        const email = emailInput.value.trim();
+        const phoneNumber = phoneInput.value.trim();
 
-    const phoneRegex = /^\d{10,}$/;
-    if (!phoneRegex.test(phoneNumber)) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Số điện thoại không hợp lệ.");
-        isValid = false;
-    }
+        let isValid = true;
 
-    if (!isValid) {
-        return;
-    }
+        if (username.length < 5 || username.length > 16) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Username must be between 5 and 16 characters.");
+            isValid = false;
+        }
 
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'xulydangky.php', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
+        if (password.length < 5) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Password must be at least 5 characters.");
+            isValid = false;
+        }
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{5,}$/;
+
+        if (!passwordRegex.test(password)) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.");
+            isValid = false;
+        }
+
+        if (password !== confirmPassword) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Password confirmation doesn't match.");
+            isValid = false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Invalid email.");
+            isValid = false;
+        }
+
+        const phoneRegex = /^\d{10,}$/;
+        if (!phoneRegex.test(phoneNumber)) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Invalid phone number.");
+            isValid = false;
+        }
+
+        if (!isValid) {
+            return;
+        }
+
+        const formData = new FormData(this);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'xulydangky.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const response = xhr.responseText;
+                    notifications.innerHTML = response; 
+                    setTimeout(() => {
+                        notifications.innerHTML = '';
+                    }, 5000);
+                } else {
+                    console.error('Error:', xhr.status);
+                }
+            }
+        };
+        xhr.send(formData);
+    });
+
+    const signInForm = document.querySelector(".sign-in-form");
+    const loginUsernameInput = document.getElementById("username");
+    const loginPasswordInput = document.getElementById("password");
+
+    signInForm.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        const username = loginUsernameInput.value.trim();
+        const password = loginPasswordInput.value.trim();
+
+        let isValid = true;
+
+        if (username.length === 0) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter username.");
+            isValid = false;
+        }
+
+        if (password.length === 0) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter password.");
+            isValid = false;
+        }
+
+        if (!isValid) {
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('u', username);
+        formData.append('p', password);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'xulylogin.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+               if (xhr.status === 200) {
                 const response = xhr.responseText;
-                notifications.innerHTML = response;
+                notifications.innerHTML = response; 
+                if (!response.trim()) { 
+                        window.location.href = "index.php"; 
+                    }
+                setTimeout(() => {
+                    notifications.innerHTML = '';
+                }, 5000);
             } else {
+                createToast("error", "fa-solid fa-exclamation-circle", "Error", "An error occurred while changing password.");
                 console.error('Error:', xhr.status);
             }
-        }
-    };
-    xhr.send(formData);
-});
-const signInForm = document.querySelector(".sign-in-form");
-const loginUsernameInput = document.getElementById("username");
-const loginPasswordInput = document.getElementById("password");
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
 
-signInForm.addEventListener("submit", function(event) {
-    event.preventDefault(); 
-
-    const username = loginUsernameInput.value.trim();
-    const password = loginPasswordInput.value.trim();
-
-    let isValid = true;
-
-    if (username.length === 0) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Vui lòng nhập tên người dùng.");
-        isValid = false;
-    }
-
-    if (password.length === 0) {
-        createToast("error", "fa-solid fa-exclamation-circle", "Lỗi", "Vui lòng nhập mật khẩu.");
-        isValid = false;
-    }
-
-    if (!isValid) {
-        return;
-    }
-
-    const formData = new FormData();
-    formData.append('u', username);
-    formData.append('p', password);
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'xulylogin.php', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-           if (xhr.status === 200) {
-            const response = xhr.responseText;
-            notifications.innerHTML = response; // Hiển thị thông báo từ máy chủ
-            if (!response.trim()) { // Kiểm tra nếu không có thông báo từ máy chủ
-                    window.location.href = "index.php"; // Chuyển hướng đến trang chính
-                }
-            // Tự động xóa thông báo sau 5 giây
-            setTimeout(() => {
-                notifications.innerHTML = '';
-            }, 5000);
-        } else {
-            createToast("error", "fa-solid fa-exclamation-circle", "Error", "An error occurred while changing password.");
-            console.error('Error:', xhr.status);
-        }
-        }
-    };
-    xhr.send(formData);
-});
-    </script>
 </body>
 
 </html>

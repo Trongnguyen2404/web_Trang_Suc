@@ -425,6 +425,25 @@ a.custom-option-link {
     width: 100%;
     display: flex;
 }
+.pay-element1{
+    height: 470px;
+            margin: auto;
+            position: relative;
+            display: inline-block;
+            border-bottom: 3px ridge #cc8344;
+            border-top: 3px ridge #cc8344;
+            border-left: 3px ridge #cc8344;
+}
+.pay-pforment{
+    display: inline-block;
+            position: absolute;
+            top: -3px;
+            max-width: 400px;
+            min-width: 390px;
+            height: 470px;
+            border: 3px ridge #cc8344;
+            padding: 10px 10px;
+}
 </style>
 <body>
 <div class ="top-card">
@@ -493,14 +512,8 @@ if($orderList !== false) {
 ?>
 <div class ="card">
 <div class="pay-element">
-    <div style="
-            height: 470px;
-            margin: auto;
-            position: relative;
-            display: inline-block;
-            border-bottom: 3px ridge #cc8344;
-            border-top: 3px ridge #cc8344;
-            border-left: 3px ridge #cc8344;
+    <div class="pay-element1" style="
+
         ">
         <div style="
             display: inline-block;
@@ -543,15 +556,8 @@ if($orderList !== false) {
                 ">$</div><div class="total0"><?php echo $orderInfo['TotalPrice']; ?></div>
             </div>
         </div>
-        <div style="
-            display: inline-block;
-            position: absolute;
-            top: -3px;
-            max-width: 400px;
-            min-width: 390px;
-            height: 470px;
-            border: 3px ridge #cc8344;
-            padding: 10px 10px;
+        <div class="pay-pforment" style="
+            
         ">
             <!-- Hiển thị thông tin người nhận -->
             <form action="oder_ds.php" method="post" enctype="multipart/form-data">

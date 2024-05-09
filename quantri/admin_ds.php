@@ -167,7 +167,7 @@ options.forEach(option => {
                 <td> <?= $row['ngay'] ?> </td>
                 <td>
                     <!-- <a href="index.php?page=theloai_sua&idUser=<?= $row['idUser'] ?>">Sửa</a> -->
-                    <a href="khachhang_xoa.php?idUser=<?= $row['idUser'] ?>">Del</a>
+                    <a href="admin_xoa.php?idUser=<?= $row['idUser'] ?>">Del</a>
                 </td>
             </tr>
             <?php } ?>

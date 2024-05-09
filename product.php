@@ -80,13 +80,14 @@ $link=getLinkName($productDetail['LoaiHH']);
 }#nav {
     margin: auto;
 }
-.card0-wrapper{
+.card0-wrapper {
     margin: 110px 0 0 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    height: auto;
 }
 .product-imgs img{
     width: 100%;
@@ -126,10 +127,10 @@ $link=getLinkName($productDetail['LoaiHH']);
 .img-item:hover{
     opacity: 0.8;
 }
-.product-content{
+.product-content {
     padding-top: 0;
-    max-width: 50%;
-    width: 50%;
+    /* max-width: 50%; */
+    width: 100%;
 }
 .product-title{
     text-transform: capitalize;
@@ -276,27 +277,29 @@ $link=getLinkName($productDetail['LoaiHH']);
     transform: translateX(-50%);
 }
 @media screen and (min-width: 992px){
-    .card0{
-        top: 0;
-        position: absolute;
-        min-height: 750px;
-        max-width: 1400px;
-        display: flex;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5rem;
-    }
-    .card0-wrapper{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .product-imgs{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 50%;
-    }
+    .card0 {
+    top: 0;
+    position: absolute;
+    max-height: 700px;
+    max-width: 1400px;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+}
+.card0-wrapper {
+    margin: 110px 0 0 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+    .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40%;
+}
     .product-content{
         padding-top: 0;
     }

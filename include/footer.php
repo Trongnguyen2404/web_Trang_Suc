@@ -18,42 +18,42 @@
                     <li><a href="how-to-preserve-silver-jewelry.php">How to preserve silver jewelry</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-col footer-col-contact">
                 <h4>CONTACT</h4>
-                <ul style="font-size: 16px; text-transform: capitalize; color: #ffffff; text-decoration: none; font-weight: 300; color: #bbbbbb; display: block;">
+                <ul class="contact" style="">
                     <li>Address: Nguyen Anh Thu Street, District 12, Ho Chi Minh City</li>
                     <li>Phone: 0346019375</li>
                     <li>Email: contact@july.vn</li>
                 </ul>
             </div>
+            <form id="review_form1">
+                <div class="row">
+                    <div class="colum colum-two">
+                        <input type="text" name="user_name1" placeholder="Name" required="" class="user_name1" style="padding: 10px; width: 100%;">
+                    </div>
+                    <div class="colum colum-two">
+                        <input type="email" name="email1" placeholder="Email" required="" class="email1" style="width: 100%; padding: 10px;">
+                    </div>
+                </div>
+                <div class="row mt-8">
+                    <div class="colum colum-full">
+                        <input type="text" name="user_review1" placeholder="Message" required="" class="user_review1" style="width: 100%; padding: 10px;">
+                    </div>
+                </div>
+                <button type="button" class="" id="save_review1" style="float: right; margin: 10px 18px; padding: 10px; font-size: 14px;">Submit</button>
+            </form>
+                <div class="notifications1"></div>
+                <style>
+                    .notifications1 {
+                        position: fixed;
+                        top: 30px;
+                        right: 20px;
+                        z-index: 50;
+                    }
+                </style>
         </div>
     </div>
     
-    <form id="review_form1">
-    <div class="row">
-        <div class="colum colum-two">
-            <input type="text" name="user_name1" placeholder="Name" required="" class="user_name1" style="padding: 10px; width: 100%;">
-        </div>
-        <div class="colum colum-two">
-            <input type="email" name="email1" placeholder="Email" required="" class="email1" style="width: 100%; padding: 10px;">
-        </div>
-    </div>
-    <div class="row mt-8">
-        <div class="colum colum-full">
-            <input type="text" name="user_review1" placeholder="Message" required="" class="user_review1" style="width: 100%; padding: 10px;">
-        </div>
-    </div>
-    <button type="button" class="btn btn-primary" id="save_review1" style="float: right; margin: 10px 18px; padding: 10px; font-size: 14px;">Submit</button>
-</form>
-    <div class="notifications1"></div>
-    <style>
-        .notifications1 {
-            position: fixed;
-            top: 30px;
-            right: 20px;
-            z-index: 50;
-        }
-    </style>
 </footer>
 <script>
     $(document).ready(function() {

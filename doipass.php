@@ -14,7 +14,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
 <link rel="stylesheet" href="./assets/fontawesome-free-6.2.1-web/css/all.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 <title>Form đăng nhập</title>
 <style>
 .left {
@@ -36,7 +36,7 @@ $u = $_SESSION['login_user'];//username dang dang nhap
 }
 .right {
     position: absolute;
-    width: 800px;
+    width: 750px;
     height: 600px;
     background: white;
     top: 0;
@@ -294,6 +294,11 @@ input {
    --color: #f24d4c;
    background-image: linear-gradient(to right, #f24d4c55, #22242F 30%);
 }
+@media (max-width: 600px) {
+    .toast{
+        width: 300px !important;
+    }
+}
 .pad0 {
     padding: 0;
     width: auto;
@@ -309,6 +314,16 @@ input {
     height: 100%;
     margin:0 ;
 }
+.logoimg{
+    position: absolute;
+    top: -55px;
+    width: 290px;
+    background: white;
+    height: 110px;
+    left: -56px;
+    border: 2px solid;
+    border-radius: 15px;
+}
 </style>
 </head>
 <body>
@@ -318,15 +333,8 @@ input {
     <div style="
     ">
         <div class="left">
-                <div style="
-                        position: absolute;
-                        top: -55px;
-                        width: 290px;
-                        background: white;
-                        height: 110px;
-                        left: -56px;
-                        border: 2px solid;
-                        border-radius: 15px;
+                <div class="logoimg" style="
+                       
                     ">
                     <img src="./icon_wed/JULY.png" alt="" style="
                         width: 100%;
@@ -415,7 +423,7 @@ input {
                                 Forgot password?
                             </a>
                             <button type="submit" class="codepro-custom-btn codepro-btn-14" name="btn">
-                                Go to home page
+                                Update
                             </button>
                         </form>
                     </div>
@@ -470,7 +478,8 @@ input {
                                     echo "<div class='oder-phone magrin'>Phone: " . $order['PhoneNumber'] . "</div>";
                                     echo "<div class='oder-price magrin'>TotalPrice: " . $order['TotalPrice'] . "</div>";
                                     echo "<div class='oder-tinhtrang magrin'>Delivery: " . getDeliveryStatus($order['TinhTrangGiaoHang']) . "</div>";
-                                    echo "<button class='codepro-custom-btn codepro-btn-14 pad0' name='btn' onclick='window.location.href='condition.php?idOder=". $encryptedIdOder ."'' target='_blank'>view or edit</button>";
+                                    echo "<button class='codepro-custom-btn codepro-btn-14 pad0' name='btn' onclick=\"window.location.href='condition.php?idOder=". $encryptedIdOder ."'\" target='_blank'>view or edit</button>";
+
                                     echo "</div>";
                                 }
                             } else {
@@ -575,6 +584,68 @@ changePasswordForm.addEventListener("submit", function(event) {
     const email = emailInput.value.trim();
     const SoDienThoai = SoDienThoaiInput.value.trim();
     let isValid = true;
+    
+    // Kiểm tra mật khẩu cũ
+    if (oldPassword === '') {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter your old password.");
+        isValid = false;
+    }
+    
+    // Kiểm tra mật khẩu mới
+    if (newPassword === '') {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter your new password.");
+        isValid = false;
+    }
+    
+    // Kiểm tra xác nhận mật khẩu mới
+    if (confirmPassword === '') {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please confirm your new password.");
+        isValid = false;
+    }
+    
+    // Kiểm tra tên người dùng
+    if (username === '') {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter your username.");
+        isValid = false;
+    }
+    
+    // Kiểm tra email
+    if (email === '') {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter your email.");
+        isValid = false;
+    }
+    
+    // Kiểm tra số điện thoại
+    if (SoDienThoai === '') {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Please enter your phone number.");
+        isValid = false;
+    }
+
+    // Kiểm tra mật khẩu cũ có giống mật khẩu mới hay không
+    if (oldPassword === newPassword) {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Old password cannot be the same as the new password.");
+        isValid = false;
+    }
+
+    // Kiểm tra độ dài và điều kiện cho tên người dùng
+    if (username.length < 5 || username.length > 13) {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Username must be between 5 and 13 characters.");
+        isValid = false;
+    }
+
+    // Kiểm tra điều kiện cho mật khẩu mới
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+    if (!passwordRegex.test(newPassword)) {
+            createToast("error", "fa-solid fa-exclamation-circle", "Error", "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.");
+            isValid = false;
+        }
+
+    // Kiểm tra độ dài số điện thoại
+    if (SoDienThoai.length !== 10) {
+        createToast("error", "fa-solid fa-exclamation-circle", "Error", "Phone number must be 10 digits long.");
+        isValid = false;
+    }
+
     if (!isValid) {
         return;
     }
@@ -591,29 +662,29 @@ changePasswordForm.addEventListener("submit", function(event) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-            const response = xhr.responseText;
-            notifications.innerHTML = response; // Hiển thị thông báo từ máy chủ
-            if (!response.trim()) { // Kiểm tra nếu không có thông báo từ máy chủ
-                let type = 'success';
-            let icon = 'fa-solid fa-circle-check';
-            let title = 'Success';
-            let text = 'This is a success toast.';
-            createToast(type, icon, title, text);
-            oldPasswordInput.value = '';
-            newPasswordInput.value = '';
-            confirmPasswordInput.value = '';
-            usernameInput.value = '';
-            emailInput.value = '';
-            SoDienThoaiInput.value = '';
-            }
+                const response = xhr.responseText;
+                notifications.innerHTML = response; // Hiển thị thông báo từ máy chủ
+                if (!response.trim()) { // Kiểm tra nếu không có thông báo từ máy chủ
+                    let type = 'success';
+                    let icon = 'fa-solid fa-circle-check';
+                    let title = 'Success';
+                    let text = 'This is a success toast.';
+                    createToast(type, icon, title, text);
+                    oldPasswordInput.value = '';
+                    newPasswordInput.value = '';
+                    confirmPasswordInput.value = '';
+                    usernameInput.value = '';
+                    emailInput.value = '';
+                    SoDienThoaiInput.value = '';
+                }
 
-            setTimeout(() => {
-                notifications.innerHTML = '';
-            }, 5000);
-        } else {
-            createToast("error", "fa-solid fa-exclamation-circle", "Error", "An error occurred while changing password.");
-            console.error('Error:', xhr.status);
-        }
+                setTimeout(() => {
+                    notifications.innerHTML = '';
+                }, 5000);
+            } else {
+                createToast("error", "fa-solid fa-exclamation-circle", "Error", "An error occurred while changing password.");
+                console.error('Error:', xhr.status);
+            }
         }
     };
     xhr.send(formData);

@@ -14,7 +14,7 @@ if(isset($_POST["rating_data"]) && isset($_POST["idHH"])){
         $idUser = $_SESSION['login_id'];
 
         if(empty($idHH) || empty($idUser)){
-            echo "Vui lòng chọn sản phẩm để đánh giá hoặc đăng nhập.";
+            echo "Please select a product to review or log in.";
             exit();
         }
 
@@ -26,7 +26,7 @@ if(isset($_POST["rating_data"]) && isset($_POST["idHH"])){
         $checkStmt->execute();
 
         if($checkStmt->rowCount() > 0){
-            echo "Bạn đã đánh giá cho sản phẩm này rồi.";
+            echo "You have already rated this product.";
             exit();
         }
 
@@ -49,7 +49,7 @@ if(isset($_POST["rating_data"]) && isset($_POST["idHH"])){
         $statement->execute($data);
         require "./functions1.php";
         updateRatingAndReview($idHH);
-        echo "Đánh giá và xếp hạng của bạn đã được gửi thành công";
+        echo "Your review and rating have been submitted successfully";
     } catch(PDOException $e) {
         echo "Lỗi: " . $e->getMessage();
     }

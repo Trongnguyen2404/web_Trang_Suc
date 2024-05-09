@@ -11,31 +11,6 @@ require "./include/header.php";
     background-size: cover;
     background-position: center;
   }
-  #search {
-    left: 0;
-    position: absolute;
-    margin: 2px 0px 0px;
-    right: 0;
-    text-align: center;
-    height: 33px;
-}
-.search-container {
-    margin: 0 45px 0 45px;
-    position: relative;
-    height: 33px;
-}
-#search input {
-    text-align: center;
-    background: #00000000;
-    width: 700px;
-    height: 100%;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #000000;
-    padding: 7px 25px;
-    font-size: 16px;
-    font-weight: 300;
-}
 .dropdown-list-item.active,
 .dropdown-list1-item.active,
 .dropdown-list2-item.active {
@@ -47,21 +22,6 @@ require "./include/header.php";
   --purple: #9a1663;
   --white: #ffffff;
   --shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-#nav {
-    margin: auto;
-}
-
-.product-imgs img{
-    width: 100%;
-    display: block;
-
-}
-#userShop .Shopping img {
-    width: 30px;
-    height: 30px;
-    vertical-align: inherit;
-    border-style: none;
 }
 .pay-element {
     height: 100vh;
@@ -228,6 +188,52 @@ input.btn.btn-primary {
     font-size: 13px;
     font-weight: 600;
 }
+.pay-product1{
+    height: 380px;
+                    margin: auto;
+                    position: relative;
+
+                    display: inline-block;
+                    border-bottom: 3px ridge #cc8344;
+                    border-top: 3px ridge #cc8344;
+                    border-left: 3px ridge #cc8344;
+}
+
+.pay-pforment1{
+    display: inline-block;
+                position: absolute;
+
+                max-width: 400px;
+                min-width: 380px;
+                height: 380px;
+                border: 3px ridge #cc8344;
+                padding: 10px 10px;
+}
+.pay-product2{
+    height: 400px;
+                margin: auto;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px ridge #cc8344;
+                border-top: 3px ridge #cc8344;
+                border-left: 3px ridge #cc8344;
+}
+
+.pay-pforment2{
+    display: inline-block;
+                position: absolute;
+                max-width: 400px;
+                min-width: 380px;
+                height: 400px;
+                border: 3px ridge #cc8344;
+                padding: 10px 10px;
+}
+.top-pay-product{
+    top: 210px;
+}
+.top-pay-pforment{
+    top: -3px;
+}
 </style>
 <div class="notifications">
     <!-- Notification messages will be displayed here -->
@@ -250,17 +256,10 @@ if ($_SERVER['REQUEST_URI'] !== '/web_Trang_Suc/pay.php') {
 ?>
 <form action="order_product.php" method="post" class="border border-primary col-10 m-auto p-2" enctype="multipart/form-data">
     <div class="pay-element">
-        <div style="
-                    height: 380px;
-                    margin: auto;
-                    position: relative;
-                    top: 210px;
-                    display: inline-block;
-                    border-bottom: 3px ridge #cc8344;
-                    border-top: 3px ridge #cc8344;
-                    border-left: 3px ridge #cc8344;
+        <div  class="pay-product1 top-pay-product" style="
+                    
                 ">
-                <div style="
+                <div class="pay-product" style="
                     display: inline-block;
                 ">
                 <ul class="name">
@@ -293,15 +292,8 @@ if ($_SERVER['REQUEST_URI'] !== '/web_Trang_Suc/pay.php') {
                         ">$</div><div class="total0">0</div>
                     </div>
                 </div>
-                <div style="
-                display: inline-block;
-                position: absolute;
-                top: -3px;
-                max-width: 400px;
-                min-width: 380px;
-                height: 380px;
-                border: 3px ridge #cc8344;
-                padding: 10px 10px;
+                <div class="pay-pforment1 top-pay-pforment" style="
+
                 ">
                         <div class="form-group">
                             <label>Recipient's name:</label> 
@@ -359,17 +351,10 @@ if ($_SERVER['REQUEST_URI'] !== '/web_Trang_Suc/pay.php') {
 ?>
 <form action="order_product.php" method="post" class="border border-primary col-10 m-auto p-2" enctype="multipart/form-data">
     <div class="pay-element">
-        <div style="
-                height: 400px;
-                margin: auto;
-                position: relative;
-                top: 210px;
-                display: inline-block;
-                border-bottom: 3px ridge #cc8344;
-                border-top: 3px ridge #cc8344;
-                border-left: 3px ridge #cc8344;
+        <div class="pay-product2 top-pay-product" style="
+                
             ">
-            <div style="
+            <div class="pay-product" style="
                 display: inline-block;
             ">
             <ul class="name">
@@ -394,15 +379,8 @@ if ($_SERVER['REQUEST_URI'] !== '/web_Trang_Suc/pay.php') {
                     ">$</div><div class="total0">0</div>
                 </div>
             </div>
-            <div style="
-                display: inline-block;
-                position: absolute;
-                top: -3px;
-                max-width: 400px;
-                min-width: 380px;
-                height: 400px;
-                border: 3px ridge #cc8344;
-                padding: 10px 10px;
+            <div  class="pay-pforment2 top-pay-pforment" style="
+
             " >
                 <div class="form-group">
                     <label>Recipient's name:</label> 
@@ -584,7 +562,7 @@ function sendIdHHList(idHHList) {
         let type = 'error';
         let icon = 'fa-solid fa-circle-exclamation';
         let title = 'Log in';
-        let text = 'Bạn cần điền vào tất cả các trường.';
+        let text = 'You need to fill in all the fields.';
         createToast(type, icon, title, text);
         return;
     }
@@ -592,8 +570,8 @@ function sendIdHHList(idHHList) {
     if (!validateEmail(email)) {
         let type = 'error';
         let icon = 'fa-solid fa-circle-exclamation';
-        let title = 'Email không hợp lệ';
-        let text = 'Vui lòng nhập địa chỉ email hợp lệ.';
+        let title = 'Invalid email';
+        let text = 'Please enter a valid email address.';
         createToast(type, icon, title, text);
         return;
     }

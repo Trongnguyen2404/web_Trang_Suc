@@ -510,6 +510,11 @@ button.btn {
 	right: 20px;
     z-index: 50;
 }
+@media (max-width: 600px) {
+    .toast{
+        width: 300px !important;
+    }
+}
 .toast{
     position: relative;
     padding: 10px;

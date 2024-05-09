@@ -25,6 +25,7 @@
     display: block;
     margin: 0 auto;
     border-radius: 15px;
+    width: 50%;
 }
 h5 {
     color: black;

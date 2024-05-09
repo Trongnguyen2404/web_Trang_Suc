@@ -3,5 +3,5 @@
     $idHH = $_GET['idHH'];
     settype($idHH, "int");
     xoaTheLoai($idHH);
-    header("location:index.php?page=theloai_ds"); //chuyển về trang danh sách record
+    header("location:index.php?page=hanghoa_ds"); //chuyển về trang danh sách record
 ?>

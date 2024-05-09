@@ -93,6 +93,11 @@
 .text-warning {
     color: #ffc107 !important;
 }
+@media (max-width: 600px) {
+    .toast{
+        width: 300px !important;
+    }
+}
 </style>
         <div class="carousel">
             <!-- list item -->
@@ -310,7 +315,7 @@
                                 height: 100%;
                             ">
                     </div>
-                    <div class="text1"
+                    <div class="text1 text"
                     data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
                         <div class="text-1" >   Welcome to July Jewelry</div>
                             <div class="text-2" data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
@@ -325,7 +330,7 @@
                             height: 100%;
                         ">
                     </div>
-                    <div class="text2"
+                    <div class="text2 text"
                     data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
                         <div class="text-1" >   Welcome to July Jewelry</div>
                         <div class="text-2"  data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
@@ -339,7 +344,7 @@
                         height: 100%;
                     ">
                     </div>
-                    <div class="text3" 
+                    <div class="text3 text" 
                     data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">
                         <div class="text-1" >   Welcome to July Jewelry</div>
                         <div class="text-2"  data-aos="fade-up" data-aos-duration="1000" class="aos-init aos-animate">   where we turn dreams of luxury and sophistication in jewelry into reality. We are a team of passion and creativity, committed to bringing the most exquisite and unique jewelry products. At July Jewelry, each piece of jewelry is not just a beautiful item, but also a marvelous work of art, crafted with meticulous attention and passion by talented artisans. When you come to us, you will experience the magic of natural gemstones and diamonds, carved by skilled hands, creating incomparable masterpieces of jewelry. Let July Jewelry be your destination in the world of jewelry, where each product carries its own story and value.
@@ -358,12 +363,8 @@
             <div id="Contact" class="content-section">
                 <h2 class="section-heading">CONTACT</h2>
                 <!-- <p class="section-sub-heading">Fan? Drop a note!</p> -->
-                <div style="
-                    font-size: 22px;
-                    font-family: math;
-                    color: black;
-                    text-align: center;
-                    margin: 0 210px;
+                <div class="Contact-text" style="
+
                 ">
                     <div>We warmly welcome any feedback from our customers regarding our products and services. Please fill out the form below or contact us via phone or email to share your thoughts. We commit to utilizing all feedback to continuously improve and optimize your experience.</div>
                     <div>For customers interested in custom jewelry orders or requiring face-to-face consultations, please contact us via the phone or email provided below. We will provide prompt and professional assistance and advice.</div>
@@ -459,7 +460,7 @@ $(document).ready(function(){
         var user_review = $('.user_review').val();
 
         if(user_name == '' || email == '' || user_review == ''){
-            createToast('error', 'fa-solid fa-times-circle', 'Error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
+            createToast('error', 'fa-solid fa-times-circle', 'Error', 'Please complete all information.');
             return false;
         } else {
             $.ajax({
@@ -475,7 +476,7 @@ $(document).ready(function(){
                     $('#review_form')[0].reset(); // Reset form sau khi gửi thành công
                 },
                 error:function(jqXHR, textStatus, errorThrown){
-                    createToast('error', 'fa-solid fa-times-circle', 'Error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
+                    createToast('error', 'fa-solid fa-times-circle', 'Error', 'An error occurred, please try again later.');
                 }
             });
         }
